@@ -28,7 +28,7 @@ class Content extends React.Component {
   render() {
     return (
       <div>
-        <Route path="/" component={Home}/>
+        <Route exact path="/" component={Home}/>
         <Route path="/projects" component={Projects}/>
         <Route path="/challenges" component={Challenges}/>
         <Route path="/resume" component={Resume}/>

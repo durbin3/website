@@ -1,3 +1,6 @@
+
+
+
 .App {
   text-align: center;
 }
@@ -67,3 +70,40 @@
     transform: rotate(360deg);
   }
 } */
+#Projects {
+  /* border: 2px solid purple; */
+  height: 100%;
+}
+#midi {
+  /* border: 2px solid yellow; */
+  height: 100%;
+}
+.content {
+  /* border: 2px solid black; */
+  height: 100%;
+}
+.slide-container {
+  width: 50%;
+  margin: auto;
+  height: 100%;
+  /* border: 2px solid red; */
+}
+.slidee {
+  height: 100%;
+  width: 100%;
+  /* border: 2px solid blue; */
+}
+.each-slide > div {
+
+  background-size: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border: 2px solid green; */
+  height: 600px;
+  width:auto;
+}
+#Projects {
+  width: 80%;
+  margin:auto;
+}
