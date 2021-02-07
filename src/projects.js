@@ -17,14 +17,14 @@ class Projects extends Component {
       <div id="Projects">
         <h2>Projects</h2>
         <Project id="midi">
-          <div className="title">Midi File Parser</div>
-          <div className="content">
-            <Images>
+            <div className="title">Midi File Parser</div>
+            <div className="content">
+            <Images className="midi_slideshow">
               <Image i="1" url={midi_1}/>
               <Image i="2" url={midi_2}/>
               <Image i="3" url={midi_3}/>
             </Images>
-            <div className="tech_title">Technologies Used:</div>
+            <div className="tech_title">Description:</div>
             <div className="text">
               The Midi file Parser can read in a directory,
               and after populating the gui with the .midi files,
@@ -43,8 +43,8 @@ class Projects extends Component {
         </Project>
         <Project id="synergi">
           <div className="title">Synergi</div>
-          <a href="https://github.com/legalian/synergi">Github Repo</a>
-          <Images>
+          <a className="github" href="https://github.com/legalian/synergi">Github Repo</a>
+          <Images className="syn_slideshow">
             <Image i="1" url={synergi_1}/>
             <Image i="2" url={synergi_2}/>
             <Image i="3" url={synergi_3}/>
@@ -52,6 +52,7 @@ class Projects extends Component {
             <Image i="5" url={synergi_5}/>
             <Image i="6" url={synergi_6}/>
           </Images>
+          <div className="tech_title">Description:</div>
           <div className="text">
               Synergi is a work-in-progress real time collaborative code editor with GitHub integration.
               The user can log into the website through GitHub, and after allowing api access to Synergi,
@@ -75,7 +76,8 @@ class Projects extends Component {
         </Project>
         <Project id="music_maker">
           <div className="title">Music Generator</div>
-          <a href="https://github.com/durbin3/music-maker">Github repo</a>
+          <a className="github" href="https://github.com/durbin3/music-maker">Github repo</a>
+          <div className="tech_title">Description:</div>
           <div className="text">
               The Music Generator can take in a time signature, tonality, and length and generate a song
               that follows music theory standards and has complex melody and rhythm. The inspiration for this project
@@ -91,6 +93,7 @@ class Projects extends Component {
         </Project>
         <Project id="conway">
           <div className="title">Conway's Game of Life</div>
+          <div className="tech_title">Description:</div>
           <div className="text">
               Solo project that recreated the cell evolution simulator conceptualized
               by John Conway in Java for the purpose of gaining experience with java
@@ -100,6 +103,7 @@ class Projects extends Component {
         </Project>
         <Project id="discord_bot">
           <div className="title">Discord Bot</div>
+          <div className="tech_title">Description:</div>
           <div className="text">
               The Discord Bot is a smaller project where I created a program to parse the messages being sent
               in my friends Discord chatroom and if one of the messages contains a reference to a movie we have seen,
@@ -110,6 +114,7 @@ class Projects extends Component {
         </Project>
         <Project id="rock_paper">
           <div className="title">Rock Paper Scissors</div>
+          <div className="tech_title">Description:</div>
           <div className="text">
               The very first project I ever made, this is the game Rock, Paper, Scissors.
               The player can play with one or two players in the browser. Super simple, but I couldn't leave it
@@ -126,17 +131,14 @@ class Projects extends Component {
 const Image = (props) => {
   return (
     <div className="each-slide">
-      <div style={{'backgroundImage': `url(${props.url})`}}>
-      </div>
+      <img src={props.url}></img>
     </div>
-
   );
 }
 class Images extends Component {
-
   render() {
     return (
-      <div className="slide-container">
+      <div className={"slide-container " + this.props.className}>
         {/* <button className="button-left" onclick="plusDivs(-1)">&#10094;</button>
         <button className="button-right" onclick="plusDivs(+1)">&#10095;</button> */}
         <Slide className="slidee" autoplay={false}>

@@ -1,5 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&amp;family=Hind:wght@300&amp;family=Montserrat:wght@300&amp;family=Nunito+Sans:wght@300&amp;family=Varela+Round&amp;family=Work+Sans:wght@300&amp;display=swap");
 
 
+.github:link, .github:visited {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.github:hover {
+  color: rgb(156, 4, 4);
+  transition: .2s;
+  text-decoration: underline;
+}
+.github {
+  font-size: 1.2em;
+}
 
 .App {
   text-align: center;
@@ -44,7 +57,7 @@
 }
 
 .NavItem:hover {
-  background-color: #464C5A;
+  background-color: #464C5A ;
 }
 
 .Name {
@@ -78,32 +91,61 @@
   /* border: 2px solid yellow; */
   height: 100%;
 }
+.title {
+  font-size: 2em;
+  margin-top: 60px;
+}
+.text {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1em;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.tech_title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 5px;
+}
 .content {
   /* border: 2px solid black; */
   height: 100%;
 }
 .slide-container {
-  width: 50%;
+  /* width: 60%; */
   margin: auto;
-  height: 100%;
   /* border: 2px solid red; */
 }
 .slidee {
-  height: 100%;
+  height: inherit;
   width: 100%;
   /* border: 2px solid blue; */
 }
-.each-slide > div {
 
-  background-size: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* border: 2px solid green; */
-  height: 600px;
-  width:auto;
+/* .syn_slideshow {
+ // border: 2px solid red;
+  height: 400px;
+  position: relative;
+  
+}
+.midi_slideshow {
+ // height: 600px;
+  border: 2px solid green;
+  position: relative;
+
+} 
+.each-slide > img {
+}*/
+img {
+  /* max-width: 100%; */
+  max-width: 100%;
+  max-height: 100%;
 }
 #Projects {
-  width: 80%;
+  width: 50%;
   margin:auto;
 }
+
+

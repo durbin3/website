@@ -12,11 +12,12 @@ import Resume from "./resume"
 function App() {
   return (
     <div className="App">
+    <header className="App-header"> 
+    </header>
       <HashRouter>
         <NavBar />
         <Content />
       </HashRouter>
-      <header className="App-header"> Poop Durbin</header>
     </div>
   );
 }
