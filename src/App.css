@@ -4,15 +4,15 @@ body {
   font-family: "Work Sans";
 }
 .github:link, .github:visited {
-  color: rgb(0, 0, 0);
+  color: rgb(156, 4, 4);
   text-decoration: none;
 }
 .github:hover {
-  color: rgb(156, 4, 4);
   transition: .2s;
   text-decoration: underline;
 }
 .github {
+  color: rgb(156, 4, 4);
   font-size: 1.2em;
 }
 
@@ -135,8 +135,18 @@ img {
   padding: 10px;
 }
 .toc_c a {
-  margin: 5px;
-  padding: 10px;
+  color:rgb(156, 4, 4);
+  margin: 2.5px;
+  padding: 7px;
+}
+.toc_c a:hover {
+  text-decoration: underline;
+}
+.toc_item {
+  display: flex;
+}
+.toc_item * {
+  text-decoration: none;
 }
 
 /**********************/

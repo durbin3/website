@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import 'react-slideshow-image/dist/styles.css'
 import { Slide } from 'react-slideshow-image';
-
+import {HashLink as Link} from 'react-router-hash-link';
 import midi_1 from "./static/images/midi_1.PNG"
 import midi_2 from "./static/images/midi_2.PNG"
 import midi_3 from "./static/images/midi_3.PNG"
@@ -16,6 +16,14 @@ class Projects extends Component {
     return (
       <div id="Projects">
         <p className="content_title">Projects</p>
+        <TOC>
+          <TOC_item href="#midi">Midi</TOC_item>
+          <TOC_item href="#synergi">Synergi</TOC_item>
+          <TOC_item href="#music_maker">Music Maker</TOC_item>
+          <TOC_item href="#conway">Conway's Game of Life</TOC_item>
+          <TOC_item href="#discord_bot">Discord Bot</TOC_item>
+          <TOC_item href="#rock_paper">Rock Paper Scissors</TOC_item>
+        </TOC>
         <Project id="midi">
             <div className="title">Midi File Parser</div>
             <div className="content">
@@ -157,5 +165,24 @@ const Project = (props) => {
   );
 }
 
+class TOC extends Component {
+  render() {
+    return(
+      <div className="toc">
+        <p className="toc_title">Table of Contents</p>
+        <div className="toc_c">
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+}
 
+const TOC_item = (props) => {
+  return (
+    <div className="toc_item">
+      <Link smooth className={props.className} to={props.href}>{props.children}</Link>
+    </div>
+  );
+}
 export default Projects;
