@@ -15,7 +15,7 @@ class Projects extends Component {
   render() {
     return (
       <div id="Projects">
-        <h2>Projects</h2>
+        <p className="content_title">Projects</p>
         <Project id="midi">
             <div className="title">Midi File Parser</div>
             <div className="content">

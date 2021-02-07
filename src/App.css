@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&amp;family=Hind:wght@300&amp;family=Montserrat:wght@300&amp;family=Nunito+Sans:wght@300&amp;family=Varela+Round&amp;family=Work+Sans:wght@300&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 
-
+body {
+  font-family: "Work Sans";
+}
 .github:link, .github:visited {
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -14,20 +16,18 @@
   font-size: 1.2em;
 }
 
+::-moz-selection { 
+  background: rgb(73, 73, 73);
+  color: #f1f1f1;
+}
+::selection { 
+  background: rgb(73, 73, 73); 
+  color: #f1f1f1;
+}
+
 .App {
   text-align: center;
 }
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 .link {
   text-decoration: none;
   color: white;
@@ -70,27 +70,6 @@
   font-size: calc(10px + 2vmin);
 }
 
-/*
-.App-link {
-  color: #61dafb;
-} */
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-#Projects {
-  /* border: 2px solid purple; */
-  height: 100%;
-}
-#midi {
-  /* border: 2px solid yellow; */
-  height: 100%;
-}
 .title {
   font-size: 2em;
   margin-top: 60px;
@@ -123,21 +102,6 @@
   width: 100%;
   /* border: 2px solid blue; */
 }
-
-/* .syn_slideshow {
- // border: 2px solid red;
-  height: 400px;
-  position: relative;
-  
-}
-.midi_slideshow {
- // height: 600px;
-  border: 2px solid green;
-  position: relative;
-
-} 
-.each-slide > img {
-}*/
 img {
   /* max-width: 100%; */
   max-width: 100%;
@@ -148,4 +112,31 @@ img {
   margin:auto;
 }
 
+.content_title {
+  font-size: 4em;
+  margin: 15px;
+}
 
+/**********************/
+
+
+/* table of contents */
+.toc_title {
+  font-size: 1.5em;
+}
+.toc_c {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.toc {
+  margin: 5px;
+  padding: 10px;
+}
+.toc_c a {
+  margin: 5px;
+  padding: 10px;
+}
+
+/**********************/
