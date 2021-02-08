@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import 'react-slideshow-image/dist/styles.css'
 import { Slide } from 'react-slideshow-image';
-import {HashLink as Link} from 'react-router-hash-link';
+import { TOC, TOC_item } from "./App"
+
 import midi_1 from "./static/images/midi_1.PNG"
 import midi_2 from "./static/images/midi_2.PNG"
 import midi_3 from "./static/images/midi_3.PNG"
@@ -11,6 +12,7 @@ import synergi_3 from "./static/images/projects.PNG"
 import synergi_4 from "./static/images/github.PNG"
 import synergi_5 from "./static/images/create_new.png"
 import synergi_6 from "./static/images/editor.PNG"
+
 class Projects extends Component {
   render() {
     return (
@@ -165,24 +167,5 @@ const Project = (props) => {
   );
 }
 
-class TOC extends Component {
-  render() {
-    return(
-      <div className="toc">
-        <p className="toc_title">Table of Contents</p>
-        <div className="toc_c">
-          {this.props.children}
-        </div>
-      </div>
-    );
-  }
-}
 
-const TOC_item = (props) => {
-  return (
-    <div className="toc_item">
-      <Link smooth className={props.className} to={props.href}>{props.children}</Link>
-    </div>
-  );
-}
 export default Projects;

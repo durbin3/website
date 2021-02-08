@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 
+html {
+  height: 100%;
+}
 body {
   font-family: "Work Sans";
+  height: 100%;
+}
+#root {
+  height: 100%;
 }
 .github:link, .github:visited {
   color: rgb(156, 4, 4);
@@ -27,8 +34,11 @@ body {
 
 .App {
   text-align: center;
+  position: relative;
+  padding-bottom: 100px;
+  min-height: 100%;
 }
-.link {
+.nav_link {
   text-decoration: none;
   color: white;
 }
@@ -135,13 +145,10 @@ img {
   padding: 10px;
 }
 .toc_c a {
-  color:rgb(156, 4, 4);
   margin: 2.5px;
   padding: 7px;
 }
-.toc_c a:hover {
-  text-decoration: underline;
-}
+
 .toc_item {
   display: flex;
 }
@@ -149,4 +156,47 @@ img {
   text-decoration: none;
 }
 
+.link {
+  color:rgb(156, 4, 4);
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
 /**********************/
+
+
+.footer {
+    position: absolute;
+    left:0;
+    bottom:0;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    background-color: #1F2127;
+    display: flex;
+    flex-direction: row;
+    color:#f1f1f1;
+
+}
+
+.footer_github {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #f1f1f1;
+  text-decoration: none;
+}
+.footer_github:hover {
+  background-color: #464C5A;
+}
+
+.footer_text {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  margin-left: 0px;
+  text-align: left;
+}
