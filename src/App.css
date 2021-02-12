@@ -90,6 +90,7 @@ body {
   font-size: 1em;
   font-weight: lighter;
   text-align: left;
+  margin: auto;
 }
 
 .tech_title {
@@ -122,6 +123,13 @@ img {
   margin:auto;
 }
 
+#Resume {
+  width: 50%;
+  margin: auto;
+}
+.content_body {
+  margin:auto;
+}
 .content_title {
   font-size: 4em;
   margin: 15px;
@@ -159,6 +167,7 @@ img {
 .link {
   color:rgb(156, 4, 4);
   text-decoration: none;
+  font-size:1.1em;
 }
 .link:hover {
   text-decoration: underline;

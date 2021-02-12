@@ -101,7 +101,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footer">
-        <div class="footer_text">Eric Durbin</div>
+        <div className="footer_text">Eric Durbin</div>
         <HashRouter>
           <Link smooth className="footer_github" to="#top">Back to top</Link>
 
