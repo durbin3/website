@@ -1,12 +1,13 @@
 import React, { Component } from "react";
  
 class Resume extends Component {
+
   render() {
     return (
       <div id="Resume">
         <div className="content_title">About Me</div>
         <div className="content_body">
-          <a className="link" href="#todo-addfile" download="eric_durbin.pdf">Resume [WIP]</a>
+          <a className="link" href="/resume" download="eric_durbin.pdf">Resume</a>
 
           <div className="title">Curriculum</div>
           <div className="text">
