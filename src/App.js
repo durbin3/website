@@ -17,10 +17,12 @@ function App() {
     <div className="App">
     <header className="App-header" id="top">
     </header>
-      <HashRouter>
-        <NavBar />
-        <Content />
-      </HashRouter>
+      <div className="poop">
+        <HashRouter>
+          <NavBar />
+          <Content />
+        </HashRouter>
+      </div>
       <Footer></Footer>
     </div>
   );
@@ -46,8 +48,8 @@ class Content extends React.Component {
 //   return (<Route path={props.path} component={props.component}/>);
 // }
 class NavBar extends React.Component {
-  renderList(url, name) {
-    return <NavItem url={url} name={name}/>
+  renderList(url, name, key) {
+    return <NavItem url={url} key={key} name={name}/>
   }
 
   render() {
@@ -56,7 +58,7 @@ class NavBar extends React.Component {
       {"url": "/challenges", "name": "Challenges"},
       {"url": "/resume", "name": "Resume/Curriculum"}
     ];
-    var listItems = items.map((x) => this.renderList(x.url,x.name));
+    var listItems = items.map((x, i) => this.renderList(x.url,x.name, i));
     return(
       <ul className="NavBar">
         <li className="Name"><NavLink className="nav_link" to="/">Eric Durbin</NavLink></li>
