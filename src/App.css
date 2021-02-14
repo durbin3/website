@@ -127,7 +127,7 @@ img {
   margin:auto;
   background-color: #DDD;
   height: 100%;
-  min-height: 100%;
+  min-height: 80vh;
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 100px;
@@ -153,6 +153,7 @@ img {
 }
 .toc_c {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
 }
