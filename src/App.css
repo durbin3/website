@@ -108,10 +108,13 @@ img {
   max-height: 100%;
 }
 #Projects {
-  width: 50%;
   margin:auto;
 }
 
+.content {
+  width: 50%;
+  margin: auto;
+}
 .content_title {
   font-size: 4em;
   margin: 15px;

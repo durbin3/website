@@ -17,16 +17,17 @@ class Projects extends Component {
       <div id="Projects">
         <p className="content_title">Projects</p>
         <TOC>
-          <TOC_item href="#midi">Midi</TOC_item>
+          <TOC_item href="#midi">Midi File Parser</TOC_item>
           <TOC_item href="#synergi">Synergi</TOC_item>
           <TOC_item href="#music_maker">Music Maker</TOC_item>
           <TOC_item href="#conway">Conway's Game of Life</TOC_item>
           <TOC_item href="#discord_bot">Discord Bot</TOC_item>
           <TOC_item href="#rock_paper">Rock Paper Scissors</TOC_item>
         </TOC>
+        <div className="content">
         <Project id="midi">
             <div className="title">Midi File Parser</div>
-            <div className="content">
+            <div>
             <Images className="midi_slideshow">
               <Image i="1" url={midi_1}/>
               <Image i="2" url={midi_2}/>
@@ -131,6 +132,7 @@ class Projects extends Component {
           <div className="tech_title">Technologies Used:</div>
           <div className="text">Javascript, HTML/CSS</div>
         </Project>
+        </div>
       </div>
     );
   }
