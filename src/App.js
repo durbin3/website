@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './css/App.css';
 
 import {
   Route,
@@ -43,9 +43,6 @@ class Content extends React.Component {
   }
 }
 
-// function (props) {
-//   return (<Route path={props.path} component={props.component}/>);
-// }
 class NavBar extends React.Component {
   renderList(url, name, key) {
     return <NavItem url={url} key={key} name={name}/>
@@ -67,7 +64,6 @@ class NavBar extends React.Component {
   }
 }
 
-// <a id="myLink" title="Click to do something" href="PleaseEnableJavascript.html" onclick="MyFunction();return false;">link text</a>
 class NavItem extends React.Component {
   render() {
     return(
@@ -108,6 +104,7 @@ class Footer extends React.Component {
 
         </HashRouter>
         <a href="https://github.com/durbin3" className="footer_github">My Github</a>
+        <a href="https://www.freepik.com" className="footer_github" title="Freepik">Icons</a> 
       </div>
     );
   }
