@@ -11,10 +11,10 @@ import {
 
 import {HashLink as Link} from 'react-router-hash-link';
 
-import Home from "./home"
-import Projects from "./projects"
-import Challenges from "./challenges"
-import Resume from "./resume"
+import Home from "./scripts/home.js"
+import Projects from "./scripts/projects"
+import Challenges from "./scripts/challenges"
+import Resume from "./scripts/resume"
 function App() {
   return (
     <div className="App">

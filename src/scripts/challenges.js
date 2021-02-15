@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TOC, TOC_item } from "./App";
+import { TOC, TOC_item } from "../App";
  
 class Challenges extends Component {
   render() {
