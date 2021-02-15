@@ -9,7 +9,6 @@ class Resume extends Component {
       <div id="Resume">
         <div className="content_title">About Me</div>
         <div className="content_body">
-          <a className="link" href="" download="eric_durbin.pdf">Resume</a>
           <div className="title">Resume</div>
           <div className="embededpdf">
             <Document file={resumePDF}>
