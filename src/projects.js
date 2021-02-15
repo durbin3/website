@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import 'react-slideshow-image/dist/styles.css'
 import { Slide } from 'react-slideshow-image';
-import { TOC, TOC_item } from "../App"
+import { TOC, TOC_item } from "./App"
 
-import midi_1 from "../static/images/midi_1.PNG"
-import midi_2 from "../static/images/midi_2.PNG"
-import midi_3 from "../static/images/midi_3.PNG"
-import synergi_1 from "../static/images/homepage.PNG"
-import synergi_2 from "../static/images/login.PNG"
-import synergi_3 from "../static/images/projects.PNG"
-import synergi_4 from "../static/images/github.PNG"
-import synergi_5 from "../static/images/create_new.png"
-import synergi_6 from "../static/images/editor.PNG"
+import midi_1 from "./static/images/midi_1.PNG"
+import midi_2 from "./static/images/midi_2.PNG"
+import midi_3 from "./static/images/midi_3.PNG"
+import synergi_1 from "./static/images/homepage.PNG"
+import synergi_2 from "./static/images/login.PNG"
+import synergi_3 from "./static/images/projects.PNG"
+import synergi_4 from "./static/images/github.PNG"
+import synergi_5 from "./static/images/create_new.png"
+import synergi_6 from "./static/images/editor.PNG"
 
 class Projects extends Component {
   render() {

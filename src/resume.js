@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import resumePDF from '../static/files/Resume.pdf';
+import resumePDF from './static/files/resume.pdf';
 import { Document, Page, pdfjs} from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 class Resume extends Component {
