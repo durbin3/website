@@ -4,8 +4,11 @@ import './App.css';
 import {
   Route,
   NavLink,
+  Switch,
+  BrowserRouter,
   HashRouter
 } from "react-router-dom";
+
 import {HashLink as Link} from 'react-router-hash-link';
 
 import Home from "./home"
@@ -15,14 +18,10 @@ import Resume from "./resume"
 function App() {
   return (
     <div className="App">
-    <header className="App-header" id="top">
-    </header>
-      <div className="poop">
-        <HashRouter>
-          <NavBar />
-          <Content />
-        </HashRouter>
-      </div>
+      <BrowserRouter>
+        <NavBar />
+        <Content />
+      </BrowserRouter>
       <Footer></Footer>
     </div>
   );
@@ -34,12 +33,12 @@ class Content extends React.Component {
   }
   render() {
     return (
-      <div>
+      <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/projects" component={Projects}/>
-        <Route path="/challenges" component={Challenges}/>
-        <Route path="/resume" component={Resume}/>
-      </div>
+        <Route exact path="/projects" component={Projects}/>
+        <Route exact path="/challenges" component={Challenges}/>
+        <Route exact path="/resume" component={Resume}/>
+      </Switch>
     );
   }
 }
