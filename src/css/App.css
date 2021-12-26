@@ -6,7 +6,7 @@ html {
 body {
   font-family: "Work Sans";
   height: 100%;
-  background-image: url("./static/images/black_background.jpg");
+  background-image: url("../static/images/black_background.jpg");
 }
 #root {
   height: 100%;
@@ -52,12 +52,15 @@ body {
   padding-right: 10%;
   width: 80%;
 }
+.NavItem a {
+  padding: 10px;
+}
 .NavItem {
   background-color: #1F2127;
   display: flex;
   flex-direction: row;
   margin: 0px 0px;
-  padding: 10px;
+
 
   align-items: center;
   justify-content: center;
@@ -122,12 +125,11 @@ img {
   width: 50%;
 }
 
-
 #Projects, #Challenges, #Home, #Resume {
   margin:auto;
-  background-color: #DDD;
+  background-color: #EEE;
   height: 100%;
-  min-height: 100%;
+  min-height: 80vh;
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 100px;
@@ -145,14 +147,21 @@ img {
 }
 
 /**********************/
+.embededpdf > div {
+  display: flex;
+  margin:auto;
+}
 
-
+.react-pdf__Document > div{
+  margin:auto;
+}
 /* table of contents */
 .toc_title {
   font-size: 1.5em;
 }
 .toc_c {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
 }

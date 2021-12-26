@@ -1,13 +1,20 @@
 import React, { Component } from "react";
- 
+import resumePDF from './static/files/resume.pdf';
+import { Document, Page, pdfjs} from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 class Resume extends Component {
+
   render() {
     return (
       <div id="Resume">
         <div className="content_title">About Me</div>
         <div className="content_body">
-          <a className="link" href="#todo-addfile" download="eric_durbin.pdf">Resume [WIP]</a>
-
+          <div className="title">Resume</div>
+          <div className="embededpdf">
+            <Document file={resumePDF}>
+              <Page pageNumber={1}/>
+            </Document>
+          </div>
           <div className="title">Curriculum</div>
           <div className="text">
               In my first two years at Purdue University, I have taken these computer courses:
@@ -39,5 +46,4 @@ class Resume extends Component {
     );
   }
 }
- 
 export default Resume;
