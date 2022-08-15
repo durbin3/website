@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TOC, TOC_item } from "./App";
+import { TOC, TocItem } from "./App";
  
 class Challenges extends Component {
   render() {
@@ -7,9 +7,9 @@ class Challenges extends Component {
       <div id="Challenges">
         <p className="content_title">Challenges</p>
         <TOC>
-          <TOC_item href="#hello_world">Hello World Hackathon</TOC_item>
-          <TOC_item href="#foobar">Google Foobar</TOC_item>
-          <TOC_item href="#p_euler">Project Euler</TOC_item>
+          <TocItem href="#hello_world">Hello World Hackathon</TocItem>
+          <TocItem href="#foobar">Google Foobar</TocItem>
+          <TocItem href="#p_euler">Project Euler</TocItem>
         </TOC>
         <Challenge id="hello_world">
           <div class="title">Hello World Hackathon</div>

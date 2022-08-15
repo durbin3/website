@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import 'react-slideshow-image/dist/styles.css'
 import { Slide } from 'react-slideshow-image';
-import { TOC, TOC_item } from "./App"
+import { TOC, TocItem } from "./App"
 
 import midi_1 from "./static/images/midi_1.PNG"
 import midi_2 from "./static/images/midi_2.PNG"
@@ -26,17 +26,17 @@ class Projects extends Component {
       <div id="Projects">
         <p className="content_title">Projects</p>
         <TOC>
-          <TOC_item href='#srgan'>SRGAN</TOC_item>
-          <TOC_item href='#nlp'>Fake-Review Detection</TOC_item>
-          <TOC_item href='#gbt'>Loan Prediction</TOC_item>
+          <TocItem href='#srgan'>SRGAN</TocItem>
+          <TocItem href='#nlp'>Fake-Review Detection</TocItem>
+          <TocItem href='#gbt'>Loan Prediction</TocItem>
 
-          <TOC_item href="#midi">Midi File Parser</TOC_item>
-          <TOC_item href="#synergi">Synergi</TOC_item>
-          <TOC_item href="#music_maker">Music Maker</TOC_item>
-          <TOC_item href="#conway">Conway's Game of Life</TOC_item>
-          <TOC_item href="#discord_bot">Discord Bot</TOC_item>
-          <TOC_item href="#rock_paper">Rock Paper Scissors</TOC_item>
-          <TOC_item href="#portfolio">Portfolio</TOC_item>
+          <TocItem href="#midi">Midi File Parser</TocItem>
+          <TocItem href="#synergi">Synergi</TocItem>
+          <TocItem href="#music_maker">Music Maker</TocItem>
+          <TocItem href="#conway">Conway's Game of Life</TocItem>
+          <TocItem href="#discord_bot">Discord Bot</TocItem>
+          <TocItem href="#rock_paper">Rock Paper Scissors</TocItem>
+          <TocItem href="#portfolio">Portfolio</TocItem>
         </TOC>
         <div className="content">
           <Project id='srgan'>
