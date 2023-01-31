@@ -4,7 +4,7 @@ import './css/App.css';
 import {
   Route,
   NavLink,
-  Switch,
+  Routes,
   BrowserRouter,
   HashRouter
 } from "react-router-dom";
@@ -33,12 +33,12 @@ class Content extends React.Component {
   }
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/projects" component={Projects}/>
-        <Route exact path="/challenges" component={Challenges}/>
-        <Route exact path="/resume" component={Resume}/>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/projects" element={<Projects/>}/>
+        <Route path="/challenges" element={<Challenges/>}/>
+        <Route path="/resume" element={<Resume/>}/>
+      </Routes>
     );
   }
 }
@@ -85,7 +85,7 @@ class TOC extends React.Component {
   }
 }
 
-const TOC_item = (props) => {
+const TocItem = (props) => {
   return (
     <div className="toc_item">
       <Link smooth className={props.className + " link"} to={props.href}>{props.children}</Link>
@@ -110,4 +110,4 @@ class Footer extends React.Component {
   }
 }
 export default App;
-export { TOC, TOC_item };
+export { TOC, TocItem };
