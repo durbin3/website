@@ -1,18 +1,23 @@
 TODO
 
+Iteration 3.0: Angular/Raw Html-CSS?
+- implement sarah redesign
+- Make projects more scannable (different categories and headers)
+- find images for discord bot
+- add link to play rock paper scissors
+- Create tag line (what my purpose is)
+- remove curriculum section
+- add skills section
+
+
+
 Resume
-- remove high school information
-- in professional experience section, you use "Gained experience doing X" a lot. Use more creative verbs (look up resume verbs)
-- keep dates consistent, try to be a little more consistent than just the year. "Summer" is okay, but then you need a similar season stamp on other dates
-- Clarify "misc experience"
-- re order categories to put items in order of relevance; work experience doesn't have to be first
-- don't start bullet points with "the"
-- cut project descriptions to one sentence descriptions
-- "Successfully created .... model to predict whether a person will repay a bank loan" is good.
 - add zip code to address
 - fix floating phone number
 - links should be clickable
-- explain fba and shopify
-- consider hierarchy, make section titles stand out more
-- consider including more technical skills
-- either get rid of high school gpa or add college gpa
+
+
+To Run:
+- clone repo
+- npm i to update packages
+- npm start to run the site
