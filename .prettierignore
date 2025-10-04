@@ -4,3 +4,7 @@ node_modules
 *.js
 *.css
 static
+*.md
+package.json
+package-lock.json
+public
