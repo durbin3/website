@@ -1,12 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatTabsModule } from '@angular/material/tabs';
+import { Route, Routes } from '@angular/router';
+import { RouterModule } from "@angular/router";
 
 @Component({
     selector: 'app-nav',
-    imports: [],
+    imports: [MatTabsModule, RouterModule],
     templateUrl: './nav.html',
     styleUrl: './nav.scss',
 })
-export class Nav {
+export class Nav implements OnInit {
     @Input() title: string = '';
-    @Input() links!: any[];
+    @Input() links!: Routes;
+    
+    activeLink!: Route;
+    
+    
+    ngOnInit(): void {
+        if (this.links?.length) {
+            this.activeLink = this.links[0];
+        }
+    }
 }
