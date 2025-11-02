@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { Route, Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { PageInfo } from '../app.routes';
 
 @Component({
     selector: 'app-nav',
@@ -11,13 +11,13 @@ import { RouterModule } from '@angular/router';
 })
 export class Nav implements OnInit {
     @Input() title: string = '';
-    @Input() links!: Routes;
+    @Input() pages!: PageInfo[];
 
-    activeLink!: Route;
+    activeLink!: PageInfo;
 
     ngOnInit(): void {
-        if (this.links?.length) {
-            this.activeLink = this.links[0];
+        if (this.pages?.length) {
+            this.activeLink = this.pages[0];
         }
     }
 }
