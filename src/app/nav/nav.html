@@ -3,6 +3,7 @@
     <nav mat-tab-nav-bar [tabPanel]="tabPanel">
         @for (link of pages; track link) {
             <a
+                class="nav-link"
                 mat-tab-link
                 [routerLink]="link.path"
                 (click)="activeLink = link"

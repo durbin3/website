@@ -1,10 +1,38 @@
-
+@use '@angular/material' as mat;
 #nav-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: var(--mat-sys-primary);
+    color: var(--mat-sys-on-primary);
+    padding: 0 16px;
 }
 
 #nav-name {
     flex-grow: 1;
+}
+
+:host {
+    @include mat.tabs-overrides((
+        divider-height: 0px,
+        active-indicator-height: 0px,
+
+        // default text color
+        inactive-label-text-color: var(--mat-sys-on-primary) ,
+
+        // active page text color
+        active-label-text-color: var(--mat-sys-tertiary-container) ,
+
+        // on-hover colors
+        inactive-hover-label-text-color: var(--mat-sys-tertiary-container),
+        active-hover-label-text-color: var(--mat-sys-tertiary-container),
+        
+        // selected with tab 
+        active-focus-label-text-color: var(--mat-sys-tertiary-container),
+        inactive-focus-label-text-color: var(--mat-sys-tertiary-container),
+        
+        // on click ripple colors
+        active-ripple-color: var(--mat-sys-tertiary-container) ,
+        inactive-ripple-color: var(--mat-sys-tertiary-container),
+    ));
 }

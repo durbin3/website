@@ -1,23 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 @use 'scss/color-theme.scss';
 
 @use '@angular/material' as mat;
 
 html {
     color-scheme: light dark;
-    @include mat.theme((
-        color: mat.$violet-palette,
-        typography: Roboto,
-        density: 0
-    ));
 }
 
 body {
     font-family:
-        'Work Sans',
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
         'Roboto',
         'Oxygen',
         'Ubuntu',
@@ -28,9 +18,8 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* background-color: #52555C; */
-    color: #333;
-    background-color: #f6f6f6;
+    color: var(--mat-sys-on-surface);
+    background-color: var(--mat-sys-surface);
     margin: 0;
 }
 
