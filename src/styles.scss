@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+@use 'scss/color-theme.scss';
+
+@use '@angular/material' as mat;
+
+html {
+    color-scheme: light dark;
+    @include mat.theme((
+        color: mat.$violet-palette,
+        typography: Roboto,
+        density: 0
+    ));
+}
+
 body {
     font-family:
         'Work Sans',
