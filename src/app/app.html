@@ -1,2 +1,6 @@
-<app-nav [title]="title()" [pages]="pages" />
-<router-outlet />
+<div id="app">
+    <app-nav [title]="title()" [pages]="pages" />
+    <div id="app-content">
+        <router-outlet />
+    </div>
+</div>

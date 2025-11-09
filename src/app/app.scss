@@ -1,16 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-
-html {
+:host { 
     height: 100%;
-}
-body {
-    font-family: 'Work Sans';
-    height: 100%;
-    background-image: url('../static/images/black_background.jpg');
+    display: block;
 }
 #root {
     height: 100%;
 }
+
+#app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#app-content {
+    flex-grow: 1;
+    width: 70%;
+    margin: auto;
+}
+
+// Old styles
 .github:link,
 .github:visited {
     color: rgb(156, 4, 4);
