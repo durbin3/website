@@ -8,11 +8,6 @@ export interface PageInfo {
 
 export const routes: Routes = [
     {
-        path: '',
-        title: 'Eric Durbin',
-        component: HomePage,
-    },
-    {
         path: 'projects',
         title: 'Eric Durbin - Projects',
         loadComponent: () =>
@@ -33,6 +28,16 @@ export const routes: Routes = [
         path: 'work-experience',
         title: 'Eric Durbin - Work Experience',
         loadComponent: () => import('./pages/work-page/work-page').then((m) => m.WorkPage),
+    },
+    {
+        path: 'home',
+        title: 'Eric Durbin',
+        loadComponent: () => import('./pages/home-page/home-page').then((m) => m.HomePage),
+    },
+    {
+        path: '',
+        title: 'Eric Durbin',
+        component: HomePage,
     },
 ];
 

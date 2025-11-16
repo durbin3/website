@@ -11,15 +11,27 @@
         creating and deploying automated financial models to predict and trade using a stock portfolio optimized to have
         the mathematically highest return for a given level of risk (variance).
     </div>
-    <div className="text">
+    <div class="text">
         In my free time I dedicate a lot of time practicing jazz trumpet and performing in my jazz band,
         which not only helps my musical skills, but transfers to all areas of my life by improving my public speaking ability
         and showing me ways to practice and improve all skills - as the same methods for practicing music can be applied generally.
     </div>
 
-    <div className="text">
+    <div class="text">
         My interests in computer science center around machine learning, as will become more obvious when viewing my personal projects.
         I have a particular interest in the field of quantitative finance, and more specifically, building predictive models for stocks
         and automated software for backtesting the models and automated trading using those models.
+    </div>
+
+    <div class="section-title">
+        Projects
+    </div>
+    <div id="projects">
+        @for (project of projectList; track project) {
+            <project-preview
+                [title]="project.title"
+                [description]="project.description">
+            </project-preview>
+        }
     </div>
 </div>

@@ -1,3 +1,6 @@
+.content {
+    max-width: 100%;
+}
 .text {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -12,4 +15,11 @@
     margin: 15px;
     text-align: center;
     font-weight: lighter;
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
 }

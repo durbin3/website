@@ -5,6 +5,10 @@
 html {
     color-scheme: light dark;
     height: 100%;
+    @include mat.theme((
+        color: (primary: mat.$violet-palette),
+        typography: ('Roboto')
+    ))
 }
 
 body {
