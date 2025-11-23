@@ -4,7 +4,7 @@ import { MatDivider } from '@angular/material/divider';
 
 @Component({
     selector: 'app-home-page',
-    imports: [ProjectPreview, MatDivider],
+    imports: [ProjectPreview],
     templateUrl: './home-page.html',
     styleUrl: './home-page.scss',
 })
