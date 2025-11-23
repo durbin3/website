@@ -3,34 +3,35 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--mat-sys-primary);
-    color: var(--mat-sys-on-primary);
-    padding: 0 16px;
+    background-color: var(--mat-sys-primary-container);
+    a { 
+        color: var(--mat-sys-on-primary-container);
+    }
+    padding: 8px 10%;
+    justify-content: flex-end;
+}
+
+#nav-links {
+    display: flex;
+    flex-direction: row;
+    // gap: 10px;
 }
 
 #nav-name {
     flex-grow: 1;
+    color: var(--mat-sys-on-primary-container);
 }
 
 :host {
-    @include mat.tabs-overrides(
-        (
-            divider-height: 0px,
-            active-indicator-height: 0px,
+    @include mat.button-overrides((
+        filled-container-color: var(--mat-sys-primary-container),
+        filled-ripple-color: var(--mat-sys-primary-fixed-dim)
+    ));
+}
 
-            // default text color
-            inactive-label-text-color: var(--mat-sys-on-primary),
-            // active page text color
-            active-label-text-color: var(--mat-sys-tertiary-container),
-            // on-hover colors
-            inactive-hover-label-text-color: var(--mat-sys-tertiary-container),
-            active-hover-label-text-color: var(--mat-sys-tertiary-container),
-            // selected with tab
-            active-focus-label-text-color: var(--mat-sys-tertiary-container),
-            inactive-focus-label-text-color: var(--mat-sys-tertiary-container),
-            // on click ripple colors
-            active-ripple-color: var(--mat-sys-tertiary-container),
-            inactive-ripple-color: var(--mat-sys-tertiary-container),
-        )
-    );
+.active {
+
+    @include mat.button-overrides((
+        filled-container-color: var(--mat-sys-primary-fixed-dim),
+    ));
 }

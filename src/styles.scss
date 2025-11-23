@@ -7,12 +7,8 @@ html {
     height: 100%;
     @include mat.theme(
         (
-            color: (
-                primary: mat.$violet-palette,
-            ),
-            typography: (
-                'Roboto',
-            ),
+            color: mat.$violet-palette,
+            typography: 'Roboto',
         )
     );
 }
@@ -25,7 +21,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--mat-sys-on-surface);
-    background-color: var(--mat-sys-secondary-container);
+    background-color: var(--mat-sys-surface-container);
     margin: 0;
 }
 

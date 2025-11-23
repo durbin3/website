@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomePage } from './pages/home-page/home-page';
 
 export interface PageInfo {
     path: string;
@@ -32,18 +31,18 @@ export const routes: Routes = [
     {
         path: 'home',
         title: 'Eric Durbin',
-        loadComponent: () => import('./pages/home-page/home-page').then((m) => m.HomePage),
+        loadComponent: () => import('./pages/home-page/home-page').then((m) => m.HomePage)
     },
     {
         path: '',
         title: 'Eric Durbin',
-        component: HomePage,
+        loadComponent: () => import('./pages/home-page/home-page').then((m) => m.HomePage)
     },
 ];
 
 export const pages: PageInfo[] = [
     {
-        path: '',
+        path: 'home',
         label: 'Home',
     },
     {
