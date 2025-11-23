@@ -5,27 +5,27 @@
 html {
     color-scheme: light dark;
     height: 100%;
-    @include mat.theme((
-        color: (primary: mat.$violet-palette),
-        typography: ('Roboto')
-    ))
+    @include mat.theme(
+        (
+            color: (
+                primary: mat.$violet-palette,
+            ),
+            typography: (
+                'Roboto',
+            ),
+        )
+    );
 }
 
 body {
     height: 100%;
     font-family:
-        'Roboto',
-        'Oxygen',
-        'Ubuntu',
-        'Cantarell',
-        'Fira Sans',
-        'Droid Sans',
-        'Helvetica Neue',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--mat-sys-on-surface);
-    background-color: var(--mat-sys-surface);
+    background-color: var(--mat-sys-secondary-container);
     margin: 0;
 }
 

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-:host { 
+:host {
     height: 100%;
     display: block;
 }
@@ -14,7 +14,9 @@
 }
 #app-content {
     flex-grow: 1;
-    width: 70%;
+    width: 80%;
+    box-shadow: var(--mat-sys-level1);
+    background-color: var(--mat-sys-surface);
     margin: auto;
 }
 

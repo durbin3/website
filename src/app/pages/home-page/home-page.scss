@@ -1,5 +1,20 @@
-.content {
+#content {
     max-width: 100%;
+    height: 100%;
+}
+
+#introduction {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    // padding-left: 15%;
+    // padding-right: 15%;
+}
+.section {
+    // padding-left: 15%;
+    // padding-right: 15%;
+}
+#project-spacer {
+    background-color: var(--mat-sys-inverse-primary);
 }
 .text {
     padding-top: 5px;
@@ -10,11 +25,10 @@
     margin: auto;
 }
 
-#page-title {
-    font-size: 4em;
-    margin: 15px;
-    text-align: center;
-    font-weight: lighter;
+#self-name {
+    font: var(--mat-sys-headline-large);
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 #projects {
@@ -22,4 +36,29 @@
     flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
+    justify-content: center;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.section-spacer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-title {
+    margin: auto;
+    text-align: center;
+    font: var(--mat-sys-headline-large);
+    vertical-align: baseline;
+}
+
+#logo {
+    vertical-align: baseline;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
 }

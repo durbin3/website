@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 import { HomePage } from './pages/home-page/home-page';
 
 export interface PageInfo {
-    path: string,
-    label: string
-} 
+    path: string;
+    label: string;
+}
 
 export const routes: Routes = [
     {
@@ -62,4 +62,4 @@ export const pages: PageInfo[] = [
         path: 'work-experience',
         label: 'Work Experience',
     },
-]
+];
