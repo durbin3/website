@@ -25,12 +25,12 @@
 :host {
     @include mat.button-overrides((
         filled-container-color: var(--mat-sys-primary-container),
-        filled-ripple-color: var(--mat-sys-primary-fixed-dim)
+        filled-ripple-color: var(--mat-sys-primary-fixed-dim),
+        filled-state-layer-color: var(--mat-sys-primary)
     ));
 }
 
 .active {
-
     @include mat.button-overrides((
         filled-container-color: var(--mat-sys-primary-fixed-dim),
     ));

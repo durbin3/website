@@ -1,4 +1,4 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import { PageInfo } from '../app.routes';
@@ -11,15 +11,7 @@ import { MatListModule } from '@angular/material/list';
     templateUrl: './nav.html',
     styleUrl: './nav.scss',
 })
-export class Nav implements OnInit {
+export class Nav {
     @Input() title: string = '';
     @Input() pages!: PageInfo[];
-
-    activeLink!: PageInfo;
-
-    ngOnInit(): void {
-        if (this.pages?.length) {
-            this.activeLink = this.pages[0];
-        }
-    }
 }
