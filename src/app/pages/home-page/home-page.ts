@@ -29,6 +29,10 @@ export class HomePage {
             description: 'Web-based real-time collaborative code editor with github-integration.',
         },
         {
+            title: 'ML Training Optimization',
+            description: 'Improving the both the training speed and model accuracy on Deep Learning models used in cross-drug interaction prediction.'
+        },
+        {
             title: 'Loan Repayment Prediction',
             description:
                 'Estimating the probability of loan defaults using Gradient Boosted Decision Trees.',
