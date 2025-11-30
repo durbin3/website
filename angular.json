@@ -31,7 +31,7 @@
             },
             "root": "",
             "sourceRoot": "src",
-            "prefix": "app",
+            "prefix": "",
             "architect": {
                 "build": {
                     "builder": "@angular/build:application",
@@ -40,6 +40,7 @@
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
                         "assets": [
+                            "src/assets",
                             {
                                 "glob": "**/*",
                                 "input": "public"
