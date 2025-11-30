@@ -1,2 +1,6 @@
-<div class="page-title">Projects</div>
-<div class="page-content"></div>
+<div id="projects">
+    @for (project of projectList; track project) {
+        <project-preview [title]="project.title" [description]="project.description">
+        </project-preview>
+    }
+</div>

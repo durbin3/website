@@ -14,10 +14,30 @@
     </div>
     <div class="section">
         <div id="projects">
-            @for (project of projectList; track project) {
-                <project-preview [title]="project.title" [description]="project.description">
-                </project-preview>
-            }
+            <div>
+                <a matButton="filled" href="/projects">See All Projects</a>
+            </div>
+            <div class="three-column">
+                @for (project of projectList; track project) {
+                    @if (project.imgPath) {
+                        <medium-project-preview
+                            class="column"
+                            [title]="project.title" 
+                            [description]="project.description"
+                            [imgPath]="project.imgPath"
+                        >
+                        </medium-project-preview>
+                    }
+                    @else {
+                        <medium-project-preview
+                            [title]="project.title" 
+                            [description]="project.description"
+                            class="column"
+                        >
+                        </medium-project-preview>
+                    }
+                }
+            </div>
         </div>
     </div>
 </div>
