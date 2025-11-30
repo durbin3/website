@@ -12,7 +12,7 @@ import { MediumProjectPreview } from '../../projects/medium-project-preview/medi
 export class HomePage {
     projectList: { title: string; description: string, imgPath?: string }[] = [
         {
-            title: 'Harmonic Extension',
+            title: 'Automatic Melody Reharmonization',
             description:
                 'Using AI to listen to human-played melodies and add complex, but still musically correct, harmonies.',
             imgPath: 'harmonic_test.png'
@@ -25,6 +25,7 @@ export class HomePage {
         {
             title: 'Image Enhancing',
             description: 'Making AI models compete in real time to enhance the clarity of images.',
+            imgPath: 'gan_1.JPG'
         },
     ];
 }
