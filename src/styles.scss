@@ -3,7 +3,7 @@
 @use '@angular/material' as mat;
 
 html {
-    color-scheme: light dark;
+    color-scheme: light;
     height: 100%;
     @include mat.theme(
         (
@@ -11,6 +11,9 @@ html {
             typography: 'Roboto',
         )
     );
+}
+.dark-mode {
+    color-scheme: dark;
 }
 
 body {
@@ -20,9 +23,11 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--mat-sys-on-surface);
-    background-color: var(--mat-sys-surface-container);
     margin: 0;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
 }
 
 code {
