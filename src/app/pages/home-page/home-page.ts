@@ -21,6 +21,7 @@ export class HomePage {
             title: 'Algorithmic Trading',
             description:
                 'Utilizing Modern Portfolio Theory and data science methods to create a python based algorithmic trader.',
+            imgPath: 'mpt_balance.png'
         },
         {
             title: 'Image Enhancing',
