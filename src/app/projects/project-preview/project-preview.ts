@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialog } from '@angular/material/dialog';
+import { Project } from '../project';
 @Component({
     selector: 'project-preview',
     imports: [MatCardModule],
@@ -9,4 +11,16 @@ import { MatCardModule } from '@angular/material/card';
 export class ProjectPreview {
     @Input() title: string = '';
     @Input() description: string = '';
+    @Input() projectComponent?: typeof Project;
+
+    readonly dialog = inject(MatDialog);
+
+    openProject(): void {
+        console.log("Opening dialog", this.projectComponent)
+        if (this.projectComponent) {
+            console.log("Opening dialog", this.projectComponent)
+            const dialogRef = this.dialog.open(this.projectComponent, {});
+        }
+    }
+
 }

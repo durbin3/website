@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ProjectPreview } from '../../projects/project-preview/project-preview';
+import { Project } from '../../projects/project';
+import { Srgan } from '../../projects/srgan/srgan';
 
 @Component({
     selector: 'app-projects-page',
@@ -8,7 +10,7 @@ import { ProjectPreview } from '../../projects/project-preview/project-preview';
     styleUrl: './projects-page.scss',
 })
 export class ProjectsPage {
-    projectList: { title: string; description: string }[] = [
+    projectList: { title: string; description: string, projectComponent?: typeof Project }[] = [
         {
             title: 'Harmonic Extension',
             description:
@@ -22,6 +24,7 @@ export class ProjectsPage {
         {
             title: 'Image Enhancing',
             description: 'Making AI models compete in real time to enhance the clarity of images.',
+            projectComponent: Srgan
         },
         {
             title: 'Collaborative Code Editor',

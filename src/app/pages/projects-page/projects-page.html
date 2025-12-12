@@ -1,6 +1,6 @@
 <div id="projects">
     @for (project of projectList; track project) {
-        <project-preview [title]="project.title" [description]="project.description">
+        <project-preview [title]="project.title" [description]="project.description" [projectComponent]="project.projectComponent">
         </project-preview>
     }
 </div>
