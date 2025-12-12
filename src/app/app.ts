@@ -11,13 +11,7 @@ import { Theme } from './theme';
     styleUrl: './app.scss',
 })
 export class App {
-    private readonly theme = inject(Theme);
+    readonly theme = inject(Theme);
     protected readonly title = signal('Eric Durbin - Software Engineer');
     pages = pages;
-
-    getColorTheme() {
-        const t = this.theme.getTheme();
-        console.log(t);
-        return t + '-mode';
-    }
 }
