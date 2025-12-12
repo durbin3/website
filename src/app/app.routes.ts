@@ -34,9 +34,7 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home-page/home-page').then((m) => m.HomePage)
     },
     {
-        path: '',
-        title: 'Eric Durbin',
-        loadComponent: () => import('./pages/home-page/home-page').then((m) => m.HomePage)
+        path: '', redirectTo: '/home', pathMatch: 'full'
     },
 ];
 

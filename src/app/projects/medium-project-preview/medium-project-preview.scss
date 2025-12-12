@@ -1,7 +1,26 @@
+@use '@angular/material' as mat;
 #project-description {
     margin-top: 10px;
 }
 
 img {
     object-fit: contain;
+}
+
+:host {
+    // height: 100%;
+    padding: 5px;
+    :hover {
+        cursor: pointer;
+        @include mat.card-overrides((
+            outlined-container-elevation: var(--mat-sys-level2),
+            // outlined-container-color: red
+            outlined-outline-color: black,
+        ));
+    }
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
 }

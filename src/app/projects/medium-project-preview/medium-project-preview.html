@@ -1,9 +1,11 @@
-<mat-card id="card" appearance="outlined">
-    <mat-card-header id="card-header">
-        <mat-card-title id="project-title">{{ title }}</mat-card-title>
-    </mat-card-header>
-    @if (imgPath) {
-        <img mat-card-image [src]="'assets/images/'+imgPath">
-    }
-    <mat-card-content id="project-description" mat-card-content>{{ description }}</mat-card-content>
-</mat-card>
+<a [routerLink]="projectPath">
+    <mat-card id="card" appearance="outlined" >
+        <mat-card-header id="card-header">
+            <mat-card-title id="project-title">{{ title }}</mat-card-title>
+        </mat-card-header>
+        @if (imgPath) {
+            <img mat-card-image [src]="'assets/images/'+imgPath">
+        }
+        <mat-card-content id="project-description" mat-card-content>{{ description }}</mat-card-content>
+    </mat-card>
+</a>

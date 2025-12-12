@@ -3,7 +3,7 @@
 @use '@angular/material' as mat;
 
 html {
-    color-scheme: light;
+    color-scheme: light dark;
     height: 100%;
     @include mat.theme(
         (
@@ -12,10 +12,14 @@ html {
         )
     );
 }
+
 .dark-mode {
     color-scheme: dark;
 }
 
+.light-mode {
+    color-scheme: light;
+}
 body {
     height: 100%;
     font-family:
