@@ -28,7 +28,7 @@ export class HomePage {
         {
             title: 'Image Enhancing',
             description: 'Making AI models compete in real time to enhance the clarity of images.',
-            imgPath: 'gan_1.JPG',
+            imgPath: 'gan/gan_1.JPG',
             projectPath: '/projects/gan'
         },
     ];
