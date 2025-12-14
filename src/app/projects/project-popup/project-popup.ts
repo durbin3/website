@@ -9,5 +9,4 @@ import { MatDialogModule } from "@angular/material/dialog";
     styleUrl: './project-popup.scss'
 })
 export class ProjectPopup {
-    @Input() projectTitle: string = '';    
 }

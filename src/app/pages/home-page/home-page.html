@@ -19,25 +19,14 @@
             </div>
             <div class="three-column">
                 @for (project of projectList; track project) {
-                    @if (project.imgPath) {
-                        <medium-project-preview
-                            class="column"
-                            [title]="project.title" 
-                            [description]="project.description"
-                            [imgPath]="project.imgPath"
-                            [projectPath]="project.projectPath"
-                        >
-                        </medium-project-preview>
-                    }
-                    @else {
-                        <medium-project-preview
-                            class="column"
-                            [title]="project.title" 
-                            [description]="project.description"
-                            [projectPath]="project.projectPath"
-                        >
-                        </medium-project-preview>
-                    }
+                    <medium-project-preview
+                        class="column"
+                        [title]="project.title" 
+                        [description]="project.description"
+                        [imgPath]="project.imgPath"
+                        [projectComponent]="project.projectComponent"
+                    >
+                    </medium-project-preview>
                 }
             </div>
         </div>

@@ -16,9 +16,7 @@ export class ProjectPreview {
     readonly dialog = inject(MatDialog);
 
     openProject(): void {
-        console.log("Opening dialog", this.projectComponent)
         if (this.projectComponent) {
-            console.log("Opening dialog", this.projectComponent)
             const dialogRef = this.dialog.open(this.projectComponent, {});
         }
     }
