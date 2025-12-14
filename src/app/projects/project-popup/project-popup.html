@@ -1,2 +1,14 @@
-<div mat-dialog-title>{{projectTitle}}</div>
-<ng-content></ng-content>
+<mat-card mat-dialog-content>
+    <div mat-card-title>
+        <ng-content select="[project-title]"></ng-content>
+    </div>
+    <div mat-card-subtitle>
+        <ng-content select="[project-subtitle]"></ng-content>
+    </div>
+    <div mat-card-content>
+        <ng-content select="[project-content]"></ng-content>
+    </div>
+    <div mat-card-footer>
+        <ng-content select="[project-footer]"></ng-content>
+    </div>
+</mat-card>

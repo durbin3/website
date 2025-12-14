@@ -13,14 +13,6 @@ html {
     );
 }
 
-.dark-mode {
-    color-scheme: dark;
-}
-
-.light-mode {
-    color-scheme: light;
-}
-
 body {
     height: 100%;
     font-family:
@@ -31,6 +23,18 @@ body {
     margin: 0;
 }
 
+.dark-mode {
+    color-scheme: dark;
+}
+
+.light-mode {
+    color-scheme: light;
+}
+
+.text { 
+    margin-bottom: 5px;
+}
+
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
 }
@@ -38,7 +42,11 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-
+:root {
+    @include mat.dialog-overrides((
+        container-max-width: 60vw,
+    ));
+}
 ul.header li {
     display: inline;
     list-style-type: none;
