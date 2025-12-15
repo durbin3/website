@@ -1,7 +1,7 @@
 <div id="content">
-    <div id="introduction" class="two-column">
-        <div id="logo"><img class="logo-img" src="assets/images/me.jpg"></div>
-        <div id="introduction-text">
+    <div id="introduction" class="two-column alt-section">
+        <mat-card id="logo"><img mat-card-image class="logo-img" src="assets/images/me.jpg"></mat-card>
+        <div id="introduction-text" class="alt-section">
             <div id="self-name">Hi, I'm Eric Durbin</div>
             <div class="text">
                 I am a data scientist with a specialization in quantitative finance and a passion
@@ -9,14 +9,12 @@
             </div>
         </div>
     </div>
-    <div id="project-spacer" class="section-spacer">
-        <div class="section-title">Check out my projects!</div>
-    </div>
-    <div class="section">
+    <div class="section flex-column">
+        <div id="project-spacer" class="flex-column">
+            <div class="section-title">Check out my favorite projects!</div>
+            <a matButton="filled" [routerLink]="'/projects'">See All Projects</a>
+        </div>
         <div id="projects">
-            <div>
-                <a matButton="filled" [routerLink]="'/projects'">See All Projects</a>
-            </div>
             <div class="three-column">
                 @for (project of projectList; track project) {
                     <medium-project-preview
@@ -31,4 +29,5 @@
             </div>
         </div>
     </div>
+
 </div>

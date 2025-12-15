@@ -4,10 +4,11 @@ import { MediumProjectPreview } from '../../projects/medium-project-preview/medi
 import { RouterLink } from "@angular/router";
 import { Project } from '../../projects/project';
 import { Srgan } from '../../projects/srgan/srgan';
+import { MatCardModule } from "@angular/material/card";
 
 @Component({
     selector: 'app-home-page',
-    imports: [MediumProjectPreview, MatButtonModule, RouterLink],
+    imports: [MediumProjectPreview, MatButtonModule, RouterLink, MatCardModule],
     templateUrl: './home-page.html',
     styleUrl: './home-page.scss',
 })
