@@ -16,6 +16,14 @@ OR
 
 @use '@angular/material' as mat;
 
+.dark-mode {
+    color-scheme: dark;
+}
+
+.light-mode {
+    color-scheme: light;
+}
+
 /* Light and dark themes */
 :root,
 :host {
