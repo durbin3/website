@@ -12,7 +12,7 @@
     <div class="section flex-column">
         <div id="project-spacer" class="flex-column">
             <div class="section-title">Check out my favorite projects!</div>
-            <a matButton="filled" [routerLink]="'/projects'">See All Projects</a>
+            <a matButton="filled" routerLink="/projects">See All Projects</a>
         </div>
         <div id="projects">
             <div class="three-column">
@@ -27,6 +27,13 @@
                     </medium-project-preview>
                 }
             </div>
+        </div>
+    </div>
+
+    <div class="section flex-column">
+        <div class="flex-column">
+            <div class="section-title">Explore my work acheivements</div>
+            <a matButton="filled" routerLink="/work-experience">See All Work Experience</a>
         </div>
     </div>
 
