@@ -1,8 +1,21 @@
-<div (click)="this.openProject()" >
-    <mat-card id="card" appearance="outlined">
-        <mat-card-header id="card-header">
-            <mat-card-title id="project-title">{{ title }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content id="project-description" mat-card-content>{{ description }}</mat-card-content>
-    </mat-card>
+<div (mouseover)="hover=true" (mouseleave)="hover=false" [ngClass]="projectComponent? 'clickable' : 'not-clickable'">
+    @if (hover && projectComponent) {
+        <div (click)="this.openProject()">
+            <mat-card id="card" appearance="filled">
+                <mat-card-header id="card-header">
+                    <mat-card-title id="project-title">{{ title }}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content id="project-description" mat-card-content>{{ description }}</mat-card-content>
+            </mat-card>
+        </div>
+    } @else {
+        <div>
+            <mat-card id="card" appearance="outlined">
+                <mat-card-header id="card-header">
+                    <mat-card-title id="project-title">{{ title }}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content id="project-description" mat-card-content>{{ description }}</mat-card-content>
+            </mat-card>
+        </div>
+    }
 </div>

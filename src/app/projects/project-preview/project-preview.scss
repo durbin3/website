@@ -8,15 +8,18 @@
     margin-top: 10px;
 }
 
+.clickable {
+    cursor: pointer;
+    user-select: none;
+    @include mat.card-overrides((
+        outlined-outline-color: black,
+    ));
+}
+
 :host {
-    // height: 100%;
-    padding: 5px;
     :hover {
-        cursor: pointer;
         @include mat.card-overrides((
-            outlined-container-elevation: var(--mat-sys-level2),
-            // outlined-container-color: red
-            outlined-outline-color: black,
+            filled-container-elevation: var(--mat-sys-level2),
         ));
     }
 }
