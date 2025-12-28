@@ -9,7 +9,12 @@
 
 .description {
     padding: 20px;
-    background-color: var(--mat-sys-surface-variant);
-    color: var(--mat-sys-on-surface-variant);
+    background-color: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
     align-self: center;
 }
+
+#challenges {
+    gap: 20px !important;
+}
+.divider { width: 100%;}
