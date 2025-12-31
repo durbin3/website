@@ -1,0 +1,13 @@
+.popup {
+    max-height: 80vh;
+}
+
+.popup-title {
+    background-color: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
+}
+
+.popup-subtitle { 
+    font-style: italic;
+    color: var(--mat-sys-outline)
+}

@@ -1,14 +1,17 @@
-<mat-card mat-dialog-content>
-    <div mat-card-title>
-        <ng-content select="[project-title]"></ng-content>
-    </div>
-    <div mat-card-subtitle>
+<div mat-dialog-title class="popup-title">
+    <ng-content select="[project-title]"></ng-content>
+</div>
+<div mat-dialog-content>
+    <div class="popup-subtitle">
         <ng-content select="[project-subtitle]"></ng-content>
     </div>
-    <div mat-card-content>
+    <div class="popup-content">
         <ng-content select="[project-content]"></ng-content>
     </div>
-    <div mat-card-footer>
+    <div class="popup-footer">
         <ng-content select="[project-footer]"></ng-content>
     </div>
-</mat-card>
+</div>
+<div mat-dialog-actions>
+    <button matButton="" (click)="onClose()">Close</button>
+</div>
