@@ -1,7 +1,7 @@
-<div id="content">
+<div class="content">
     <div id="introduction" class="two-column alt-section">
         <mat-card id="logo"><img mat-card-image class="logo-img" src="assets/images/me.jpg"></mat-card>
-        <div id="introduction-text" class="alt-section">
+        <div id="introduction-text">
             <div id="self-name">Hi, I'm Eric Durbin</div>
             <div class="text">
                 I am a data scientist with a specialization in quantitative finance and a passion
@@ -12,29 +12,28 @@
     <div class="section flex-column">
         <div class="flex-column">
             <div class="section-title">Check out my favorite projects!</div>
-            <a matButton="filled" routerLink="/projects">See All Projects</a>
         </div>
         <div id="projects">
             <div class="three-column">
                 @for (project of projectList; track project) {
                     <medium-project-preview
-                        class="column"
-                        [title]="project.title" 
-                        [description]="project.description"
-                        [imgPath]="project.imgPath"
-                        [projectComponent]="project.projectComponent"
+                    class="column"
+                    [title]="project.title" 
+                    [description]="project.description"
+                    [imgPath]="project.imgPath"
+                    [projectComponent]="project.projectComponent"
                     >
-                    </medium-project-preview>
-                }
+                </medium-project-preview>
+            }
             </div>
         </div>
+        <a matButton="filled" routerLink="/projects">See All Projects</a>
     </div>
-
+    
     <div class="section flex-column">
         <div class="flex-column">
             <div class="section-title">Explore my work acheivements</div>
             <a matButton="filled" routerLink="/work-experience">See All Work Experience</a>
         </div>
     </div>
-
 </div>
