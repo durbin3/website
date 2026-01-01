@@ -2,6 +2,9 @@
 #project-description {
     margin-top: 10px;
 }
+#card {
+    height: 480px;
+}
 
 .preview-image {
     height: 360px;
@@ -12,11 +15,14 @@
 :host {
     // height: 100%;
     padding: 5px;
+    @include mat.card-overrides((
+        outlined-container-color: var(--mat-sys-surface-container-lowest),
+    ));
+
     :hover {
         cursor: pointer;
         @include mat.card-overrides((
             outlined-container-elevation: var(--mat-sys-level2),
-            // outlined-container-color: red
             outlined-outline-color: black,
         ));
     }
