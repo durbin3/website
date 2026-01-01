@@ -14,7 +14,6 @@ export class ProjectPreview {
     @Input() description: string = '';
     @Input() projectComponent?: typeof Project;
 
-    hover: boolean = false;
     readonly dialog = inject(MatDialog);
 
     openProject(): void {

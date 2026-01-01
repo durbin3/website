@@ -11,15 +11,23 @@
 .clickable {
     cursor: pointer;
     user-select: none;
-    @include mat.card-overrides((
-        outlined-outline-color: black,
-    ));
+    :hover {
+        @include mat.card-overrides((
+            outlined-outline-color: var(--mat-sys-outline),
+            outlined-container-elevation: var(--mat-sys-level2),
+        ));
+    }
 }
 
 :host {
-    :hover {
-        @include mat.card-overrides((
-            filled-container-elevation: var(--mat-sys-level2),
-        ));
-    }
+    @include mat.card-overrides((
+        outlined-container-color: var(--mat-sys-surface-container-lowest),
+    ));
+}
+
+.not-clickable {
+    @include mat.card-overrides((
+        outlined-container-color: var(--mat-sys-surface-container-high),
+    ));
+    color: var(--mat-sys-outline);
 }
