@@ -3,8 +3,10 @@
     margin-top: 10px;
 }
 
-img {
-    object-fit: contain;
+.preview-image {
+    height: 360px;
+    object-fit: cover;
+    filter: opacity(90%) brightness(.5) blur(1px);
 }
 
 :host {

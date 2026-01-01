@@ -15,9 +15,9 @@ import { MatCardModule } from "@angular/material/card";
 export class HomePage {
     projectList: { title: string; description: string, imgPath: string, projectComponent?: typeof Project }[] = [
         {
-            title: 'Automatic Melody Reharmonization',
+            title: 'Automatic Harmony Classification',
             description:
-                'Using AI to listen to human-played melodies and add complex, but still musically correct, harmonies.',
+                'Using AI to listen to melodies and figure out what harmonies could be used to add complexity and depth to music.',
             imgPath: 'harmonic_test.png',
         },
         {
