@@ -3,13 +3,14 @@
     margin-top: 10px;
 }
 #card {
-    height: 480px;
+    height: 490px;
 }
 
 .preview-image {
+    margin-top:10px;
     height: 360px;
     object-fit: cover;
-    filter: opacity(90%) brightness(.5) blur(1px);
+    filter: opacity(90%) brightness(.6);
 }
 
 :host {
