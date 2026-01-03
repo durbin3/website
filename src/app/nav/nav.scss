@@ -1,0 +1,58 @@
+@use '@angular/material' as mat;
+$background-color: var(--mat-sys-primary);
+$font-color: var(--mat-sys-on-primary);
+$active-state-color: var(--mat-sys-primary-container);
+$active-state-font-color: var(--mat-sys-on-primary-container);
+#nav-bar {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 99;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $background-color;
+    a { 
+        color: $font-color
+    }
+    .active {
+        color: $active-state-font-color
+    }
+    padding: 8px 10%;
+    justify-content: flex-end;
+}
+
+#nav-links {
+    display: flex;
+    flex-direction: row;
+    // gap: 10px;
+}
+
+#nav-name {
+    flex-grow: 1;
+    color: $font-color
+}
+#nav-spacer {
+    height: 56px;
+}
+
+:host {
+    @include mat.button-overrides((
+        filled-container-color: $background-color, // default background
+        filled-state-layer-color: $background-color, // hover background
+        filled-ripple-color: $active-state-color, // on click color
+    ));
+
+    @include mat.icon-button-overrides((
+        icon-color: $font-color,
+        state-layer-color: $active-state-color, // hover background
+        // ripple-color: $active-state-color, // on click color
+    ));
+}
+
+.active {
+    @include mat.button-overrides((
+        filled-container-color: $active-state-color, // active default background
+    ));
+}

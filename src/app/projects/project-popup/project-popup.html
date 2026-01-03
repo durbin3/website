@@ -1,0 +1,17 @@
+<div mat-dialog-title class="popup-title">
+    <ng-content select="[project-title]"></ng-content>
+</div>
+<div mat-dialog-content>
+    <div class="popup-subtitle">
+        <ng-content select="[project-subtitle]"></ng-content>
+    </div>
+    <div class="popup-content">
+        <ng-content select="[project-content]"></ng-content>
+    </div>
+    <div class="popup-footer">
+        <ng-content select="[project-footer]"></ng-content>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button matButton="" (click)="onClose()">Close</button>
+</div>

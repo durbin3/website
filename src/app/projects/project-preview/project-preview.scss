@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+
+#card {
+    width: 250px;
+    height: 250px;
+}
+
+#project-description {
+    margin-top: 10px;
+}
+
+.not-clickable {
+    @include mat.card-overrides((
+        outlined-container-color: var(--mat-sys-surface-container-high),
+    ));
+    color: var(--mat-sys-outline);
+}
+
+.clickable {
+    cursor: pointer;
+    user-select: none;
+    :hover {
+        @include mat.card-overrides((
+            outlined-outline-color: var(--mat-sys-outline),
+            outlined-container-elevation: var(--mat-sys-level2),
+        ));
+    }
+}
+
+
+:host {
+    @include mat.card-overrides((
+        outlined-container-color: var(--mat-sys-surface-container-lowest),
+    ));
+}

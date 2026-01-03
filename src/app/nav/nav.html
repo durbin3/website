@@ -1,0 +1,25 @@
+<div id="nav-bar">
+    <span id="nav-name">{{title}}</span>
+    <nav id="nav-links">
+        @for (link of pages; track link) {
+            <a
+                matButton="filled"
+                class="nav-link"
+                [routerLink]="link.path"
+                routerLinkActive="active"
+            >
+                {{ link.label }}
+            </a>
+        }
+        <button matIconButton (click)="toggleLightMode()">
+            <span class="material-symbols-outlined icon-btn">
+                @if (lightMode) {
+                    dark_mode
+                } @else {
+                    light_mode
+                }
+            </span>
+        </button>
+    </nav>
+</div>
+<div id="nav-spacer"></div>

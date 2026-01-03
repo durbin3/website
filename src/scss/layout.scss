@@ -1,0 +1,115 @@
+.content {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.alt-section {
+    color: var(--mat-sys-primary);
+    background-color: var(--mat-sys-inverse-primary);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: var(--mat-sys-level1);
+    border-radius: var(--mat-sys-corner-medium);
+}
+
+.alt {
+    color: var(--mat-sys-primary);
+    background-color: var(--mat-sys-inverse-primary);
+}
+
+.section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: var(--mat-sys-level1);
+    border-radius: var(--mat-sys-corner-medium);
+    background-color: var(--mat-sys-surface);
+}
+
+.text {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1em;
+    font-weight: lighter;
+    text-align: left;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font: var(--mat-sys-headline-large);
+    vertical-align: baseline;
+}
+.subtitle {
+    font-style: italic;
+    color: var(--mat-sys-outline)
+}
+
+.flex-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.no-gap {
+    gap: 0 !important;
+}
+
+.row {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 325px; 
+    min-height: 0;
+    min-width: 0;
+    .column {
+        overflow: hidden;
+    }
+}
+
+.three-column {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 500px;
+    max-width: 100%;
+    min-height: 0;
+    min-width: 0;
+    .column {
+        overflow: hidden;
+    }
+}
+.three-rows {
+    display: grid;
+    gap: 20px;
+    // grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    max-height: 100%;
+    min-height: 0;
+    min-width: 0;
+    .column {
+        overflow: hidden;
+    }
+}

@@ -21,3 +21,36 @@ To Run:
 - clone repo
 - npm i to update packages
 - npm start to run the site
+
+List of current pages that my site currently has:
+- Home page
+- Project Page
+- Miscellaneous Challenges that I've participated in
+- Resume/Curriculum/About Page
+
+List of my projects that I've worked on:
+- Harmonic Extension Using Deep Learning Networks
+- SRGAN - Optimizing Super Resolution With Deep Learning
+- Algorithmic Stock Trader
+- Fake-Review Detection
+- Loan Prediction
+- Midi File Parser
+- Synergi - Collaborative Code Editor
+- Music Maker
+- Conway's Game of Life
+- Discord Bot
+- Rock Paper Scissors
+- Web Portfolio
+
+Challenges List:
+- Hackathon
+- Google Foobar challenge
+- Project Euler
+
+Work Experience:
+- Software Engineer / Data Analyst at Bond Trading Company
+- Web Development Intern at healthcare company
+
+Goals for redesign:
+- Emphasize my technical skills 
+- Showcase my work experience

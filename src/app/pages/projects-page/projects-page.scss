@@ -1,0 +1,20 @@
+
+.challenge-title {
+    align-content: center;
+    text-align: center;
+    font: var(--mat-sys-headline-large);
+    height: 100%;
+    width: 100%;
+}
+
+.description {
+    padding: 20px;
+    background-color: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
+    align-self: center;
+}
+
+#challenges {
+    gap: 20px !important;
+}
+.divider { width: 100%;}
