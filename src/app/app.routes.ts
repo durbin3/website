@@ -36,8 +36,8 @@ export const pages: PageInfo[] = [
         path: 'projects',
         label: 'Projects',
     },
-    {
-        path: 'work-experience',
-        label: 'Work Experience',
-    },
+    // {
+    //     path: 'work-experience',
+    //     label: 'Work Experience',
+    // },
 ];
