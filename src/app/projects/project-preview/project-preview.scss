@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+
 #card {
     width: 250px;
     height: 250px;
@@ -6,6 +7,13 @@
 
 #project-description {
     margin-top: 10px;
+}
+
+.not-clickable {
+    @include mat.card-overrides((
+        outlined-container-color: var(--mat-sys-surface-container-high),
+    ));
+    color: var(--mat-sys-outline);
 }
 
 .clickable {
@@ -19,15 +27,9 @@
     }
 }
 
+
 :host {
     @include mat.card-overrides((
         outlined-container-color: var(--mat-sys-surface-container-lowest),
     ));
-}
-
-.not-clickable {
-    @include mat.card-overrides((
-        outlined-container-color: var(--mat-sys-surface-container-high),
-    ));
-    color: var(--mat-sys-outline);
 }

@@ -1,9 +1,11 @@
 @use '@angular/material' as mat;
-#project-description {
-    margin-top: 10px;
-}
+
 #card {
     height: 490px;
+}
+
+#project-description {
+    margin-top: 10px;
 }
 
 .preview-image {
@@ -14,22 +16,16 @@
 }
 
 :host {
-    // height: 100%;
-    padding: 5px;
+    cursor: pointer;
+    user-select: none;
     @include mat.card-overrides((
         outlined-container-color: var(--mat-sys-surface-container-lowest),
     ));
 
     :hover {
-        cursor: pointer;
         @include mat.card-overrides((
+            outlined-outline-color: var(--mat-sys-outline),
             outlined-container-elevation: var(--mat-sys-level2),
-            outlined-outline-color: black,
         ));
     }
-}
-
-a {
-    text-decoration: inherit;
-    color: inherit;
 }
