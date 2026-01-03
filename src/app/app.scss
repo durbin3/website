@@ -1,4 +1,6 @@
+@use "@angular/material" as mat;
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
 :host {
     height: 100%;
     display: block;
@@ -19,4 +21,30 @@
     flex-grow: 1;
     width: 80%;
     margin: auto;
+}
+
+/* Styles for the work in progress notification container */
+#wip-container {
+    width: 80%;
+    margin: auto;
+    background-color: #ffd5b4;
+    color: #5c3c23;
+    margin-top: 16px;
+    border-radius: var(--mat-sys-corner-medium);
+    box-shadow: var(--mat-sys-level1);
+    @include mat.icon-button-overrides((
+        icon-color: #5c3c23
+    ));
+}
+#wip-text {
+    padding: 5px;
+    padding-left: 16px;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+#wip-message {
+    flex-grow: 1;
 }

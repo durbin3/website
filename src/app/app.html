@@ -1,5 +1,14 @@
 <div id="app" [class]="theme.getColorTheme()">
     <app-nav [title]="title()" [pages]="pages" />
+    @if (showWIP) {
+        <div id="wip-container">
+            <div id="wip-text">
+                <span class="material-symbols-outlined">warning</span>
+                <span id="wip-message">This website is actively being rewritten and does not yet have all planned features and content.</span>
+                <button matIconButton (click)="showWIP = false"><span class="material-symbols-outlined">cancel</span></button>
+            </div>
+        </div>
+    }
     <div id="app-content">
         <router-outlet />
     </div>
