@@ -5,16 +5,125 @@
             View source code: <a class="github" href="https://github.com/durbin3/harmony_classification">Github Repo</a>
         </div>
         <div>
-            View Paper: 
+            View Paper: <a href="assets/files/Harmonic_Extension_Using_Deep_Learning.pdf">Full Writeup (pdf)</a>
         </div>
     </ng-container>
     <ng-container project-content>
         <h3>Project Description</h3>
         <div class="text">
-            
+            This project combines my knowledge of machine learning techniques with my passion for music in a novel way to push the frontier of musical machine learning. More specifically, this project aims to create a process for suggesting harmonic extensions of melodies by calculating the similarity between the melodic structure and chords of differing harmonic complexities. 
+        </div>
+        <h3>Dataset</h3>
+        <div class="text">
+            The data used was custom generated MIDI files that contain 
+            the data for a single chord or melody from a specific 
+            musical mode (major, minor, etc.). For training, 14 chord 
+            qualities were used, with each chord having 10 samples generated 
+            in each of the 12 keys, or almost 2,700 data samples. For the test dataset,
+            instead of sampling from the chords directly, scales with high similarity to the chords
+            were used to generate mock melodies. This way of testing
+            mimics applying the model over a real-world melody, as
+            most melodies are composed of more than just chord tones.
+            With 1 scale per key generated for each of the 14 chord
+            qualities, a total of 168 test patterns were generated. 
+            A table of the chords and scales used is shown below.
+        </div>
+        <div class="image-container">
+            <img class="image" src="assets/images/harmony/harmony_chord_table.png">
+        </div>
+        <h3>Models Used</h3>
+        <div class="text">
+            Three different models were tested throughout the training
+            process: a simple Multilayer Perceptron Network (MLP),
+            a Convolutional Neural Network (CNN), a Recurrent Neural 
+            Network (RNN). The reasoning behind using the CNN
+            was rooted in the idea that CNNs are known to perform
+            well with image processing, as they are able to extract two-dimensional
+            features from the input that would otherwise be
+            lost in a one-dimensional representation. Utilizing a spectrogram
+            image, or midi representation, of the sound input
+            with the CNN would allow for time-frequency features to be
+            extracted from the input. While CNNs are good for image
+            processing, RNNs, on the other hand, should work better for
+            time-series data. Since music can be thought of as a time
+            series of note values, the RNN should theoretically perform
+            well with this problem.
         </div>
 
-        
+        <h3>Results</h3>
+        <div class="text">
+            Of the three models, the RNN was unable to learn significantly
+            and therefore performed the worst. Due to the
+            complexity of the RNN model, it is unclear whether the
+            issue is theoretical or implementation related, but because
+            each time slice is significantly smaller than the duration of a
+            single note, most time steps have no changes. Furthermore,
+            the target labels themselves are not time-correlated, as the
+            chord is assumed to span the entire duration of the track.
+            With both of these considerations in mind, it makes sense
+            that a time-heavy model such as an RNN would not learn
+            significantly over this dataset.
+        </div>
+        <div class="text">
+            The two remaining models are somewhat more difficult to
+            compare, as each has its own purpose. The CNN is useful
+            over the full MIDI-time representation, as the convolution
+            layers allow it to learn over the much larger input size.
+            The large kernels over the time axis do not transfer to the
+            (12, 2) occurrence-duration representation, which is where
+            the MLP model was utilized.
+        </div>
+        <div class="text">
+            Since the final model was the MLP with the occurrence-duration
+            data representation, the rest of the results will be
+            focused around just these.
+        </div>
+        <div class="text">
+            After training, the model was able to perfectly learn fit the training dataset, with 0% misclassification
+            over the validation dataset. When ran over the test dataset, however, the misclassification rate jumps to 42%.
+            This seems bad until you look at what predictions the model is actually making.
+        </div>
+        <div class="image-container">
+            <img src="assets/images/harmony/harmonic_test.png" class="image">
+        </div>
+
+        <div class="text">
+            The above confusion matrix details the test predictions against the actual chord under the melody. 
+            Let's look at the test sequences that were sampled from the major pentatonic
+            scale, found in the first row of confusion matrix. The model primarily
+            predicted both major and minor-7 chords with equal
+            probability. At first glance it appears that the model must
+            be bad at predicting major sequences, but when writing the
+            notes of the major pentatonic scale out it becomes clear
+            what is happening. Table 2 (below) shows that the given alternative
+            predictions for sequences over the major pentatonic scale
+            have a significant overlap with the scale and are thus appear
+            to be valid alternatives to major chords for this scale. In fact,
+            it appears that when predicting E minor-7 over the C major
+            pentatonic scale, the model is inferring additional harmony,
+            as the B that is present in the E minor-7 chord is not present
+            in the major pentatonic scale.
+        </div>
+        <div class="image-container">
+            <img src="assets/images/harmony/harmony_maj_pred.png" class="image">
+        </div>
+        <div class="text">
+            This is just one interesting insight from the results, 
+            the rest are listed in the <a href="assets/files/Harmonic_Extension_Using_Deep_Learning.pdf">full paper</a>. 
+        </div>
+
+        <h3>Conclusion</h3>
+        <div class="text">
+            This project demonstrates that it is possible to take melodies and assign chords
+            to the melodies that can be justified harmonically with a
+            reasonable degree of accuracy. It is both able to classify
+            melodies with their true chords, as well as suggest chords
+            that have different harmonic interpretations within the same
+            melodic framework. Additionally, a useful data representation 
+            of music was found which results in a low-dimensional
+            embedding of sound waves over time, which can
+            be utilized for future research.
+        </div>
     </ng-container>
     <ng-container project-footer>
         <h3 class="tech_title">Top Python Packages Used:</h3>

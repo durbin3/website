@@ -19,7 +19,7 @@ export class HomePage {
             title: 'Automatic Harmony Classification',
             description:
                 'Using AI to listen to melodies and figure out what harmonies could be used to add complexity and depth to music.',
-            imgPath: 'harmonic_test.png',
+            imgPath: 'harmony/harmonic_test.png',
             projectComponent: Harmony
         },
         {

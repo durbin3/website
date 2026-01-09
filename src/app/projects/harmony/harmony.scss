@@ -1,0 +1,12 @@
+.image {
+    max-width: calc(40vw - 48px);
+}
+
+.image-container {
+    padding-top: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
