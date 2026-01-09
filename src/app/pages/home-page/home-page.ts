@@ -5,6 +5,7 @@ import { RouterLink } from "@angular/router";
 import { Project } from '../../projects/project';
 import { Srgan } from '../../projects/srgan/srgan';
 import { MatCardModule } from "@angular/material/card";
+import { Harmony } from '../../projects/harmony/harmony';
 
 @Component({
     selector: 'app-home-page',
@@ -19,6 +20,7 @@ export class HomePage {
             description:
                 'Using AI to listen to melodies and figure out what harmonies could be used to add complexity and depth to music.',
             imgPath: 'harmonic_test.png',
+            projectComponent: Harmony
         },
         {
             title: 'Algorithmic Trading',
