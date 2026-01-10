@@ -6,6 +6,7 @@ import { Project } from '../../projects/project';
 import { Srgan } from '../../projects/srgan/srgan';
 import { MatCardModule } from "@angular/material/card";
 import { Harmony } from '../../projects/harmony/harmony';
+import { AlgoTrading } from '../../projects/algo-trading/algo-trading';
 
 @Component({
     selector: 'app-home-page',
@@ -27,6 +28,7 @@ export class HomePage {
             description:
                 'Utilizing Modern Portfolio Theory and data science methods to create a python based algorithmic trader.',
             imgPath: 'mpt_balance.png',
+            projectComponent: AlgoTrading
             
         },
         {
