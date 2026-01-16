@@ -1,0 +1,190 @@
+<project-popup>
+    <ng-container project-title>Algorithmic Trading</ng-container>
+    <ng-container project-content>
+        
+        <!-- Project Description -->
+        <h3>Project Description</h3>
+        <div class="text">
+            When thinking about how to apply data science to the real world, 
+            the first thing that many people try is to predict the movements of 
+            the stock market. Now, this is considered by some to be the holy grail
+            of machine learning, and as such, quite a fruitless endeavor for most, but
+            that didn't stop me from trying my hand at the issue.
+        </div>
+        <div class="text">
+            The goal with my approach to this problem was to apply complex mathematical models to
+            the data to give myself an edge over people who "feel the market out" while trading. 
+            This had two downsides:
+            <ol>
+                <li>Complicated mathematical models are complicated, and introduce many failure points.</li>
+                <li>I didn't actually know any complex math or models at the start of this project.</li>
+            </ol>
+
+            As such, this project turned into a perfect learning opportunity to gain experience with 
+            many fundamental concepts for Finance, Machine Learning, and Data Science.
+        </div>
+        <h3>Algorithm Structure</h3>
+        <div class="text">
+            The program that I, and my partner <a href="https://www.linkedin.com/in/parker-lawrence-b97989222/">Parker Lawrence</a>,
+            developed ended up consisting of a 3 different layers:
+            <ol>
+                <li>Data Processing</li>
+                <li>Purchase Decision Algorithm</li>
+                <li>Automatic Trader</li>
+            </ol>
+        </div>
+
+        <!-- Data Preprocessing -->
+        <h3>Data Processing</h3>
+        <div class="text">
+            The data that we used primarily came from Yahoo Finance and the Alpaca Trade API. 
+            We downloaded daily data for around 15,000 individual stocks from 1980 to 2023. 
+            The columns downloaded included:
+            <ul>
+                <li>Open Price</li>
+                <li>Maximum Price</li>
+                <li>Minimum Price</li>
+                <li>Close Price</li>
+                <li>Adjusted Close Price (accounts for stock splits, buy backs, etc.)</li>
+                <li>Trade Volume (number of shared bought/sold)</li>
+            </ul>
+            Since there was so much data downloaded each run, implementing an efficient caching system was a necessity.
+            We ended up creating a Stocks class that loads all tickers inside of a rolling period so that we can compute 
+            various signals without having to load more data from the file system. Downloading this much data also required building 
+            a system of multithreaded download workers to ping Yahoo Finance
+            and Alpaca, while remaining within each API's rate limits. 
+        </div>
+        <div class="text">
+            Once downloaded, we then filtered stocks out to simplify analysis and trading later down the pipeline. More specifically,
+            we would filter out any stocks that:
+            <ul>
+                <li>Was not tradeable (for obvious reasons)</li>
+                <li>Could not trade on margin</li>
+                <li>Was able to trade shorts</li>
+                <li>Was not a US Equity</li>
+                <li>Had low volume (< 100,000 daily shares sold/bought)</li>
+                <li>Had a Volume-Weighted-Average Price of < $0.04 (to remove penny stocks)</li>
+            </ul>
+        </div>
+
+        <!-- Purchase Decision Algorithm -->
+        <h3>Purchase Decision Algorithm</h3>
+        <div class="text">
+            The meat and potatoes of any algorithmic trader is the method that determines what, how much, and when to buy a portfolio of stocks. 
+            In our case we drew from the Markowitz view of investing: <a href="https://doi.org/10.1111/j.1540-6261.1952.tb01525.x">Modern Portfolio Theory</a>.
+            Intuitively, the idea behind Modern Portfolio Theory (MPT) is that the more diversivied a portfolio is, the less risk there is that it loses money in the long term.
+            The math behind this involves minimizing the covariance between a portfolio of stocks while maximizing the return until the portfolio sits on the line of 
+            "optimal" portfolios, called the Efficient Frontier. 
+        </div>
+        <div class="text">
+            Every combination of stocks has a location on the graph of risk-returns, but not every portfolio is equally good.
+            Theory states that the efficient frontier (depicted below) is the set of portfolios that give the highest rate of return for
+            the lowest risk.
+        </div>
+        <div class="image-container">
+            <img src="assets/images/mpt/efficient_frontier.png" class="image">
+        </div>
+        <div class="text">
+            Considering the efficient frontier has no direct equation to solve for, finding portfolios that lie close to
+            or on the frontier is computationally challenging. With a small number of stocks, this can be solved using
+            Lagrange Optimization, but since the computational complexity grows quadratically with respect to the number of
+            stocks evaluated, this becomes infeasible quite quickly. Additionally, adding in extra constraints, such as 
+            the maximum percentage of the portfolio a single stock can be long or short, moves the problem into 
+            the Non-Linear Programming space, which must be solved analytically. As such, our approach to 
+            this dual-optimization problem was a custom gradient descent solver. 
+        </div>
+        <div class="text">
+            The tricky part of the gradient descent algorithm is the fact that when maximizing the sharpe ratio
+            of a given portfolio, it's trivially easy to construct a portfolio with a large return by 
+            accepting extremely high variance (think combinations of super volatile stocks), and it's equally easy
+            to construct portfolios with negligible risk by accepting almost zero return above the risk-free rate.
+            But neither of these approaches give something that is on the efficient frontier of optimal portfolios.
+            Because of this, our approach was to perform a dual-gradient-descent algorithm, where we alternate between 
+            minimizing variance for a given return, then maximizing return for a given variance threshold.
+        </div>
+        <div class="text">
+            Below is an example of the path that the optimizer takes in finding the maximal portfolio. 
+            The optimizer starts with a random collection of stocks, which have the cyan color, and then alternates between
+            choosing allocations that are better at minimizing the variance of the portfolio, and allocations
+            that are better at maximizing the return. Eventually the optimizer finds a portfolio
+            that is objectively better (less risk and greater return) than the starting portfolio. 
+            The vertical dotted lines represent our desired variance threshold for the final portfolio.
+        </div>
+        <div class="image-container">
+            <img src="assets/images/mpt/mpt_trend_3.png" class="image">
+        </div>
+        <!-- Trading Bot Description -->
+        <h3>Automatic Trader</h3>
+        <div class="text">
+            The automatic trading system that we set up was a bot that had all the components of data downloading, processing, and purchasing decisions abstracted away 
+            by the previous parts so that the only logic we had to implement was the actual connection to the api itself. We used Alpaca for our trading
+            api, in part because they had a programatic api at all, but also because they had the ability to set 
+            up paper trading (something that was extremely valuable for us broke college students).
+        </div>
+        <div class="text">
+            For each day, the trader would perform the following steps:
+            <ol>
+                <li>At 10am, start the process of constructing a theoretical portfolio for the day</li>
+                <li>Run the data preprocessing for todays stock data</li>
+                <li>Pass this data into the purchase decision algorithm to construct a desired portfolio for today</li>
+                <li>Create buy orders of the stocks in the desired portfolio</li>
+                <li>Submit these orders via the api, taking care to not go over the rate limits</li>
+                <li>Wait until 3pm, then close out of all the positions</li>
+            </ol>
+            This is a simple algorithm, and can certainly be improved with additional research into optimal execution strategies and the addition of stop-loss orders, 
+            but simple market orders worked to get the trader working.
+        </div>
+
+        <!-- Results -->
+        <h3>Results</h3>
+        <div class="text">
+            We ran a lot of backtesting during the course of this project, and because of that, it would be disingenuous to provide a single number for the results
+            of the algorithm. With projects like these, it's extremely easy to cherry pick good results (p-hacking), ignore invalid assumptions (instant execution time, perfect stop loss metrics, etc.),
+            and essentially manipulate the results into looking as good or as bad as the creator wants them to be. In our case, we had many tests where the model lost all its money,
+            and many tests where the model made an absurdly large amount of money (>10,000% ROI). This is in large part due to our assumptions about 
+            how the execution side of the model would operate.
+        </div>
+        <div class="text">
+            We assumed for simplicity that there would be instant execution time and zero bid-ask spread on
+            the stocks we traded. This turns out to not be true, and in many cases, the price spread is rather significant and cannot be ignored. 
+            Another assumption made is how effective our stop loss limits would be. Since we only had end-of-day data, the inclusion of stop
+            loss orders in our backtesting meant that we could not find days where the price would dip below the limit, only to rebound later in the day.
+            This means that our orders are likely going to be less accurate in testing than in practice. Additionally, probably
+            our least accurate assumption was the level to which we would be able to buy on margin. This amplified our
+            profits by an insane degree, but also our losses, as will be depicted later.
+        </div>
+        <div class="text">
+            With this in mind, I'll show two years of results. One where we ended up with about a 12x gain over the course of a year,
+            and one where we ended up with a +50% gain. For each set of charts you can see:
+            <ul>
+                <li>The balance over the course of the year</li>
+                <li>The percent daily change in balance</li>
+                <li>How much we beat the market each day</li>
+                <li>The cumulative average daily percentage return</li>
+            </ul>
+        </div>
+        <div class="text">
+            For 2019, the model achieved an average of about 1% gain per day for the whole year, which leads to a whopping 1200% gain
+            when compounded each day. In 2022, however, even though we ended with a +50% gain from where we started,
+            notice that the first couple months of the year had us in extreme negatives, in large part because of how 
+            much was traded on margin. 
+        </div>
+        <h3>Returns 2019</h3>
+        <div class="image-container">
+            <img src="assets/images/mpt/mpt_balance_2019.png" class="image">
+        </div>
+        <h3>Returns 2022</h3>
+        <div class="image-container">
+            <img src="assets/images/mpt/mpt_balance_2022.png" class="image">
+        </div>
+    </ng-container>
+    <ng-container project-footer>
+        <h3 class="tech_title">Areas of Interest:</h3>
+        <ol>
+            <li>Machine Learning</li>
+            <li>Quantitative Finance / Stochastic Calculus</li>
+            <li>Data Science / Visualization</li>
+            <li>Interfacing with APIs</li>
+        </ol>
+    </ng-container>
+</project-popup>

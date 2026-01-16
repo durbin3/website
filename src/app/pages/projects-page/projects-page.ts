@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ProjectPreview } from '../../projects/project-preview/project-preview';
 import { Project } from '../../projects/project';
 import { Srgan } from '../../projects/srgan/srgan';
+import { Harmony } from '../../projects/harmony/harmony';
+import { AlgoTrading } from '../../projects/algo-trading/algo-trading';
 
 @Component({
     selector: 'app-projects-page',
@@ -15,11 +17,13 @@ export class ProjectsPage {
             title: 'Harmonic Extension',
             description:
                 'Using AI to listen to human-played melodies and add complex, but still musically correct, harmonies.',
+            projectComponent: Harmony
         },
         {
             title: 'Algorithmic Trading',
             description:
                 'Utilizing Modern Portfolio Theory and data science methods to create a python based algorithmic trader.',
+            projectComponent: AlgoTrading
         },
         {
             title: 'Image Enhancing',

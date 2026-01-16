@@ -1,9 +1,9 @@
 {
     "name": "website-angular",
     "version": "2.0.0",
-    "engines" : { 
-        "node" : ">=20.19.0",
-        "npm" : ">=10.0.0"
+    "engines": {
+        "node": ">=20.19.0",
+        "npm": ">=10.0.0"
     },
     "scripts": {
         "ng": "ng",
@@ -39,7 +39,7 @@
     },
     "devDependencies": {
         "@angular/build": "^20.3.4",
-        "@angular/cli": "^20.3.4",
+        "@angular/cli": "^20.0.6",
         "@angular/compiler-cli": "^20.3.0",
         "@types/jasmine": "~5.1.0",
         "jasmine-core": "~5.9.0",

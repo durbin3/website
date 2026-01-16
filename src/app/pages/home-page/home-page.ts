@@ -5,6 +5,8 @@ import { RouterLink } from "@angular/router";
 import { Project } from '../../projects/project';
 import { Srgan } from '../../projects/srgan/srgan';
 import { MatCardModule } from "@angular/material/card";
+import { Harmony } from '../../projects/harmony/harmony';
+import { AlgoTrading } from '../../projects/algo-trading/algo-trading';
 
 @Component({
     selector: 'app-home-page',
@@ -18,13 +20,15 @@ export class HomePage {
             title: 'Automatic Harmony Classification',
             description:
                 'Using AI to listen to melodies and figure out what harmonies could be used to add complexity and depth to music.',
-            imgPath: 'harmonic_test.png',
+            imgPath: 'harmony/harmonic_test.png',
+            projectComponent: Harmony
         },
         {
             title: 'Algorithmic Trading',
             description:
                 'Utilizing Modern Portfolio Theory and data science methods to create a python based algorithmic trader.',
-            imgPath: 'mpt_balance.png',
+            imgPath: 'mpt/mpt_balance_2019.png',
+            projectComponent: AlgoTrading
             
         },
         {
