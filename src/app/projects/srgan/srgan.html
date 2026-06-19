@@ -6,9 +6,11 @@
     <ng-container project-content>
         <h3>Project Description</h3>
         <div class="text">
-            In this project I constructed a machine learning model to take in low resolution images
-            and enhance them, creating higher resolution images that contain more visual detail than
-            the original, low-resolution image.
+            In this project, my partner Daniel Chen and I built a machine learning model that takes low 
+            resolution images and enhances them, generating higher resolution images that contain more 
+            visual detail than the original input. We based our approach on the SRGAN (Super-Resolution 
+            Generative Adversarial Network) paper, reimplementing the architecture and training process 
+            from scratch in Keras.
         </div>
 
         <h3>How GANs Work</h3>
@@ -24,6 +26,45 @@
             real.
         </div>
 
+        <h3>Architecture and Training</h3>
+        <div class="text">
+            Our generator is a deep residual network: it first compresses the input image into a condensed feature representation through 16 residual blocks, 
+            then runs it through two upscaling blocks (using pixel-shuffling) to reconstruct a 4x higher resolution image. 
+            The discriminator is a standard deep CNN classifier that takes an image and outputs a single real-vs-fake probability.
+        </div>
+        <div class="text">
+            One of the more interesting design choices in the SRGAN approach is the loss function. 
+            Rather than just comparing pixel values directly between the generated and real high-res images 
+            (which tends to produce blurry, averaged-out results), we passed both images through a pretrained
+            VGG19 network and compared their internal feature representations instead. 
+            This "perceptual loss" pushes the generator toward textures and details that look right to the human eye, rathan than those 
+            that minimize pixel-wise error.
+        </div>
+        <div class="text">
+            We also split training into two phases: first pretraining the generator by itself using simple
+            pixel-loss to get it into a reasonable starting state, then training it adversarially against the discriminator
+            using the full perceptual loss. The MSE-only phase alone produces images that look sharper but very noisy;
+            layering on the adversarial training afterward smooths everything out into something far more natural looking.
+        </div>
+
+        <h3>Pitfalls</h3>
+        <div class="text">
+            GANs have a reputation for being notoriously difficult to train, and we found out why firsthand.
+            Our early attempts ran into just about every classic GAN failure mode:
+            <ul>
+                <li><strong>Mode Collapse</strong>: When the generator learns the average input that produces the least error and only generates that input.</li>
+                <li><strong>Diverging Pixel Values</strong>: Output images converging on pure white / black images or saturated colors instead of a real image (one iteration produced a solid magenta square regardless of input)</li>
+                <li><strong>Bad Loss Configuration</strong>: Early versions before we'd correctly implemented the VGG perceptual loss which caused the GAN to not converge at all.</li>
+            </ul>
+        </div>
+        <div class="text">
+            Getting past these required a handful of standard GAN stabilization tricks: 
+            adding noise to the discriminator's input, occasionally flipping training labels, 
+            and training the discriminator less frequently than the generator so it didn't overpower 
+            it early on. After enough tuning, we started getting outputs that much more closely resembled the true output 
+            images, while also being noticeably clearer than the input.
+        </div>
+
         <h3>Enhanced Image Examples</h3>
         <div class="text">
             Below are pictures of the successful Super Resoluted images (SR), compared with their low
@@ -36,6 +77,14 @@
             <img src="assets/images/gan/gan_4.JPG">
             <img src="assets/images/gan/gan_5.JPG">
             <img src="assets/images/gan/gan_6.JPG">
+        </div>
+
+        <h3>Limitations</h3>
+        <div class="text">
+            We trained on a relatively small dataset (a few thousand images) for about five weeks on personal desktop hardware. 
+            The original SRGAN paper trained on hundreds of thousands of images over millions of iterations using dedicated GPU 
+            hardware, so our results, while a clear improvement over the low-res inputs, don't reach that same level of fidelity.
+            With more data, more compute, and more time, the same approach should scale to much better results.
         </div>
     </ng-container>
     <ng-container project-footer>
