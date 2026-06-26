@@ -4,6 +4,7 @@ import { Project } from '../../projects/project';
 import { Srgan } from '../../projects/srgan/srgan';
 import { Harmony } from '../../projects/harmony/harmony';
 import { AlgoTrading } from '../../projects/algo-trading/algo-trading';
+import { LoanPrediction } from '../../projects/loan-prediction/loan-prediction';
 
 @Component({
     selector: 'app-projects-page',
@@ -42,6 +43,7 @@ export class ProjectsPage {
             title: 'Loan Repayment Prediction',
             description:
                 'Estimating the probability of loan defaults using Gradient Boosted Decision Trees.',
+            projectComponent: LoanPrediction
         },
         {
             title: 'Fake Review Detection',

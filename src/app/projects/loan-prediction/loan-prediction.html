@@ -1,0 +1,32 @@
+<project-popup>
+    <ng-container project-title>Loan Prediction Model</ng-container>
+    <ng-container project-content>
+        <h3>Project Description</h3>
+        <div class="text">
+            A class Kaggle competition on an industry-scale dataset, where the goal was to predict whether
+            a borrower would repay their mortgage. The input data was constructed of structured but uncleaned csv rows with
+            both categorical and numerical columns such as loan amount, zip code, and race. I tested the problem across the model space 
+            (logistic regression, decision trees, k nearest neighbor (KNN)) and 
+            training strategies (bagging, boosting, k-fold cross validation),
+            pairing each with different preprocessing and data-pruning approaches.
+            Gradient Boosted Decision Trees had the highest accuracy out of all the approaches I tried,
+            but the more interesting problem was bias: race wasn't a reliable field, yet zip code acted as
+            a proxy for it due to historical redlining. Part of the work was identifying and correcting for that rather than
+            pushing for more advanced models.
+        </div>
+        <h3>Summary</h3>
+        <ul>
+            <li>Predicted mortgage loan repayment using a Gradient Boosted Decision Tree, outperforming simpler baselines</li>
+            <li>Evaluated multiple model families and training strategies (bagging, boosting, k-fold CV) to find the best-performing approach</li>
+            <li>Identified and mitigated demographic bias in the data, including zip code acting as a proxy for race due to redlining</li>
+        </ul>
+    </ng-container>
+    <ng-container project-footer>
+        <h3 class="tech_title">Top Python Packages Used:</h3>
+        <ol>
+            <li>Pytorch</li>
+            <li>Pandas</li>
+            <li>Numpy</li>
+        </ol>
+    </ng-container>
+</project-popup>
